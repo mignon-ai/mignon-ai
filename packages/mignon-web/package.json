@@ -1,0 +1,54 @@
+{
+  "name": "@mignon-ai/mignon-web",
+  "version": "0.1.0",
+  "description": "Run mignon-ai models in the browser or Node: the engine as WebAssembly with a small JavaScript API",
+  "keywords": [
+    "wasm",
+    "webassembly",
+    "language-model",
+    "inference",
+    "int8"
+  ],
+  "license": "Elastic-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mignon-ai/mignon-ai.git",
+    "directory": "packages/mignon-web"
+  },
+  "homepage": "https://github.com/mignon-ai/mignon-ai/tree/main/packages/mignon-web#readme",
+  "bugs": "https://github.com/mignon-ai/mignon-ai/issues",
+  "main": "./dist/mignon.js",
+  "module": "./dist/mignon.mjs",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/mignon.js",
+  "jsdelivr": "./dist/mignon.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/mignon.mjs",
+      "default": "./dist/mignon.js"
+    },
+    "./mignon-web.wasm": "./dist/mignon-web.wasm",
+    "./integrity.json": "./dist/integrity.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node --test test/mignon.test.mjs",
+    "pack:tarball": "node scripts/build.mjs && node scripts/pack.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

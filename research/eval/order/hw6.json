@@ -1,0 +1,418 @@
+[
+ {
+  "instruction": "refunds in April 2024",
+  "output": "orders find --status refunded --month april --year 2024"
+ },
+ {
+  "instruction": "cancellation count for last week",
+  "output": "orders count --status cancelled --when last-week"
+ },
+ {
+  "instruction": "overdue invoices count",
+  "output": "orders count --status overdue"
+ },
+ {
+  "instruction": "shipped orders total",
+  "output": "orders total --status shipped"
+ },
+ {
+  "instruction": "paid toys count",
+  "output": "orders count --status paid --category toys"
+ },
+ {
+  "instruction": "how many returns did we get in 2023",
+  "output": "orders count --status refunded --year 2023"
+ },
+ {
+  "instruction": "revenue for this week",
+  "output": "orders total --when this-week"
+ },
+ {
+  "instruction": "what was our revenue in March 2025",
+  "output": "orders total --month march --year 2025"
+ },
+ {
+  "instruction": "this year's revenue from books",
+  "output": "orders total --category books --when this-year"
+ },
+ {
+  "instruction": "total sales yesterday",
+  "output": "orders total --when yesterday"
+ },
+ {
+  "instruction": "whats the revenue from unpaid orders",
+  "output": "orders total --status unpaid"
+ },
+ {
+  "instruction": "the sum of beauty orders over 40",
+  "output": "orders total --category beauty --min-amount 40"
+ },
+ {
+  "instruction": "shippd orders from last week",
+  "output": "orders find --status shipped --when last-week"
+ },
+ {
+  "instruction": "cancled orders in toys",
+  "output": "orders find --status cancelled --category toys"
+ },
+ {
+  "instruction": "todays orders",
+  "output": "orders find --when today"
+ },
+ {
+  "instruction": "last weeks refunded orders",
+  "output": "orders find --status refunded --when last-week"
+ },
+ {
+  "instruction": "show me unpiad orders over 300",
+  "output": "orders find --status unpaid --min-amount 300"
+ },
+ {
+  "instruction": "how many ordres did we get yesterdy",
+  "output": "orders count --when yesterday"
+ },
+ {
+  "instruction": "elecronics orders from this month",
+  "output": "orders find --category electronics --when this-month"
+ },
+ {
+  "instruction": "what wasnt paid last month",
+  "output": "orders find --status unpaid --when last-month"
+ },
+ {
+  "instruction": "pendng orders over 1000",
+  "output": "orders find --status pending --min-amount 1000"
+ },
+ {
+  "instruction": "grocries orders in febuary",
+  "output": "orders find --category groceries --month february"
+ },
+ {
+  "instruction": "last 5 invoices",
+  "output": "orders find --sort newest --limit 5"
+ },
+ {
+  "instruction": "first 4 orders",
+  "output": "orders find --sort oldest --limit 4"
+ },
+ {
+  "instruction": "latest order",
+  "output": "orders find --sort newest --limit 1"
+ },
+ {
+  "instruction": "the most expensive order",
+  "output": "orders find --sort highest --limit 1"
+ },
+ {
+  "instruction": "cheapest 2 orders",
+  "output": "orders find --sort lowest --limit 2"
+ },
+ {
+  "instruction": "oldest unpaid order",
+  "output": "orders find --status unpaid --sort oldest --limit 1"
+ },
+ {
+  "instruction": "newest 3 refunded orders",
+  "output": "orders find --status refunded --sort newest --limit 3"
+ },
+ {
+  "instruction": "top 5 biggest orders in sports",
+  "output": "orders find --category sports --sort highest --limit 5"
+ },
+ {
+  "instruction": "last 7 orders from Acme",
+  "output": "orders find --customer Acme --sort newest --limit 7"
+ },
+ {
+  "instruction": "biggest order from Hooli",
+  "output": "orders find --customer Hooli --sort highest --limit 1"
+ },
+ {
+  "instruction": "what is still unpaid",
+  "output": "orders find --status unpaid"
+ },
+ {
+  "instruction": "anything overdue",
+  "output": "orders find --status overdue"
+ },
+ {
+  "instruction": "is anything pending from Globex",
+  "output": "orders find --status pending --customer Globex"
+ },
+ {
+  "instruction": "only toys",
+  "output": "orders find --category toys"
+ },
+ {
+  "instruction": "just groceries please",
+  "output": "orders find --category groceries"
+ },
+ {
+  "instruction": "what did Marco order last month",
+  "output": "orders find --when last-month --customer Marco"
+ },
+ {
+  "instruction": "what has Ingrid bought",
+  "output": "orders find --customer Ingrid"
+ },
+ {
+  "instruction": "everything Wayne ordered in 2024",
+  "output": "orders find --year 2024 --customer Wayne"
+ },
+ {
+  "instruction": "has Priya ordered anything this week",
+  "output": "orders find --when this-week --customer Priya"
+ },
+ {
+  "instruction": "anything shipped to Soylent",
+  "output": "orders find --status shipped --customer Soylent"
+ },
+ {
+  "instruction": "what's late",
+  "output": "orders find --status overdue"
+ },
+ {
+  "instruction": "anything cancelled today",
+  "output": "orders find --status cancelled --when today"
+ },
+ {
+  "instruction": "could you pull up all paid orders over $250",
+  "output": "orders find --status paid --min-amount 250"
+ },
+ {
+  "instruction": "show me orders from the past 30 days",
+  "output": "orders find --last-days 30"
+ },
+ {
+  "instruction": "I want to see sports orders worth less than 60",
+  "output": "orders find --category sports --max-amount 60"
+ },
+ {
+  "instruction": "list all clothing orders placed in November",
+  "output": "orders find --category clothing --month november"
+ },
+ {
+  "instruction": "orders between 100 and 200 dollars",
+  "output": "orders find --min-amount 100 --max-amount 200"
+ },
+ {
+  "instruction": "unpaid electronics orders from this year",
+  "output": "orders find --status unpaid --category electronics --when this-year"
+ },
+ {
+  "instruction": "shipped books last month",
+  "output": "orders find --status shipped --category books --when last-month"
+ },
+ {
+  "instruction": "how many orders were placed on March 3rd",
+  "output": "orders count --month march --day 3"
+ },
+ {
+  "instruction": "count of refunded orders last year",
+  "output": "orders count --status refunded --when last-year"
+ },
+ {
+  "instruction": "how many cancelled home orders",
+  "output": "orders count --status cancelled --category home"
+ },
+ {
+  "instruction": "number of orders from Initech",
+  "output": "orders count --customer Initech"
+ },
+ {
+  "instruction": "total of paid orders from Stark in 2022",
+  "output": "orders total --status paid --year 2022 --customer Stark"
+ },
+ {
+  "instruction": "total value of orders over 500 last month",
+  "output": "orders total --min-amount 500 --when last-month"
+ },
+ {
+  "instruction": "orders before 2023",
+  "output": "orders find --before 2023"
+ },
+ {
+  "instruction": "orders after June 15 2024",
+  "output": "orders find --after june-15-2024"
+ },
+ {
+  "instruction": "pending orders placed before the 1st of May",
+  "output": "orders find --status pending --before may-1"
+ },
+ {
+  "instruction": "show order 4471",
+  "output": "orders find --id 4471"
+ },
+ {
+  "instruction": "find order number 902",
+  "output": "orders find --id 902"
+ },
+ {
+  "instruction": "order #60231",
+  "output": "orders find --id 60231"
+ },
+ {
+  "instruction": "invoice 3380",
+  "output": "orders find --id 3380"
+ },
+ {
+  "instruction": "customer Wonka",
+  "output": "orders find --customer Wonka"
+ },
+ {
+  "instruction": "orders by Dimitra Kostas",
+  "output": "orders find --customer \"Dimitra Kostas\""
+ },
+ {
+  "instruction": "everything from Aperture Labs",
+  "output": "orders find --customer \"Aperture Labs\""
+ },
+ {
+  "instruction": "unpaid invoices from Umbrella over 800",
+  "output": "orders find --status unpaid --min-amount 800 --customer Umbrella"
+ },
+ {
+  "instruction": "refunded orders in beauty this year",
+  "output": "orders find --status refunded --category beauty --when this-year"
+ },
+ {
+  "instruction": "all orders",
+  "output": "orders find"
+ },
+ {
+  "instruction": "sorted by amount, orders over 2000, highest first",
+  "output": "orders find --min-amount 2000 --sort highest"
+ },
+ {
+  "instruction": "overdue orders, oldest first",
+  "output": "orders find --status overdue --sort oldest"
+ },
+ {
+  "instruction": "paid orders last 10 days",
+  "output": "orders find --status paid --last-days 10"
+ },
+ {
+  "instruction": "august",
+  "output": "orders find --month august"
+ },
+ {
+  "instruction": "unpaid",
+  "output": "orders find --status unpaid"
+ },
+ {
+  "instruction": "shipped december",
+  "output": "orders find --status shipped --month december"
+ },
+ {
+  "instruction": "under 20 dollars",
+  "output": "orders find --max-amount 20"
+ },
+ {
+  "instruction": "2021",
+  "output": "orders find --year 2021"
+ },
+ {
+  "instruction": "ship order 4410",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "please dispatch order 77 today",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "send an email to Acme about their invoice",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "remind Hooli about the unpaid invoice",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "cancel order 812",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "delete everything from Globex",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "mark order 55 as refunded",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "update the address of Wonka",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "play my favourite playlist",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "play some jazz",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "call Marco",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "open the window",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "what is the capital of Spain",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "tell me a bedtime story",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "how do I bake bread",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "translate good night into Italian",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "hello there",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "thanks a lot",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "who won the match",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "whats the weather like",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "show me a picture of a dog",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "find me a cheap flight to Rome",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "list the colours of the rainbow",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "what time does the shop close",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "kjhg lkj",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "???",
+  "output": "orders unknown"
+ }
+]

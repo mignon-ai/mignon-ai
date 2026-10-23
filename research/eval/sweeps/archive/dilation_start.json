@@ -1,0 +1,9 @@
+{
+  "seeds": [1, 2, 3],
+  "text": "data/pretrain_git_v3",
+  "base": {"preset": "small", "opt": "muon", "epochs": 3, "max_seqs": 60000},
+  "variants": [
+    {"name": "start1_dead_slot", "dilation_start": 1},
+    {"name": "start_base", "dilation_start": 3}
+  ]
+}

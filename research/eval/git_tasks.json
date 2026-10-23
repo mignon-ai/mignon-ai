@@ -1,0 +1,3622 @@
+[
+  {
+    "category": "Git argument copy",
+    "instruction": "can you revert uncommitted changes in data?",
+    "prompt": "git restore",
+    "expected": [
+      " data"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "please add git worktree at ../test-db-pool for test/db-pool",
+    "prompt": "git worktree",
+    "expected": [
+      " add"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I want to force merge commit when merging jwt-rotation",
+    "prompt": "git merge --no-ff",
+    "expected": [
+      " jwt-rotation"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how can I remove src/env.example2 from staging area without deleting changes?",
+    "prompt": "git restore --staged",
+    "expected": [
+      " src/env.example2"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how do I revert commit 6078d1d in history?",
+    "prompt": "git revert",
+    "expected": [
+      " 6078d1d"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "can you update my local mignon with changes from upstream remote?",
+    "prompt": "git fetch",
+    "expected": [
+      " upstream"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I need to add branch issue-5091-db-pool",
+    "prompt": "git branch",
+    "expected": [
+      " issue-5091-db-pool"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I need to create and switch to new branch ticket-6547-cache-redis",
+    "prompt": "git checkout -b",
+    "expected": [
+      " ticket-6547-cache-redis"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how to force push with lease to gitlab sprint3",
+    "prompt": "git push --force-with-lease",
+    "expected": [
+      " gitlab"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how do I rebase my work onto branch rate-limiter?",
+    "prompt": "git rebase",
+    "expected": [
+      " rate-limiter"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "please set email for current repo to mignon@acme.com",
+    "prompt": "git config user.email '",
+    "expected": [
+      "mignon@acme.com"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "please apply commit 6eb707e into current branch",
+    "prompt": "git cherry-pick",
+    "expected": [
+      " 6eb707e"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "can you revert commit fa8dbba?",
+    "prompt": "git revert",
+    "expected": [
+      " fa8dbba"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "please add git worktree at ../speedup-simd for speedup-simd",
+    "prompt": "git worktree",
+    "expected": [
+      " add"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I want to squash merge all commits from branch test4",
+    "prompt": "git merge --squash",
+    "expected": [
+      " test4"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how can I show git blame for test?",
+    "prompt": "git blame",
+    "expected": [
+      " test"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how do I rename current branch to feature/session-store?",
+    "prompt": "git branch -m",
+    "expected": [
+      " feature/session-store"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I want to fetch upstream and merge upstream/JIRA-1897-mobile-responsive into current branch",
+    "prompt": "git fetch",
+    "expected": [
+      " upstream"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "configure local user.email as lucas-lead@dev.io",
+    "prompt": "git config",
+    "expected": [
+      " user.email"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "commit with message 'add unit tests for payment webhook endpoints'",
+    "prompt": "git commit -m '",
+    "expected": [
+      "add"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "can you rebase pull from remote staging test3?",
+    "prompt": "git pull --rebase",
+    "expected": [
+      " staging"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how to pull JIRA-8589-search-indexing",
+    "prompt": "git pull origin",
+    "expected": [
+      " JIRA-8589-search-indexing"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how to checkout branch ticket-4166-rate-limiter?",
+    "prompt": "git checkout",
+    "expected": [
+      " ticket-4166-rate-limiter"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how do I checkout new branch staging/payment-stripe and push it to origin setting upstream?",
+    "prompt": "git checkout -b",
+    "expected": [
+      " staging/payment-stripe"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "please change user.name to mark55 in current repo",
+    "prompt": "git config",
+    "expected": [
+      " user.name"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how can I merge branch refactor/webhook-listener as a single squashed commit?",
+    "prompt": "git merge --squash",
+    "expected": [
+      " refactor/webhook-listener"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "please amend last commit with worker.tmp keeping original message",
+    "prompt": "git add",
+    "expected": [
+      " worker.tmp"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how do I create a new branch issue-9807-dark-mode and switch to it?",
+    "prompt": "git checkout -b",
+    "expected": [
+      " issue-9807-dark-mode"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how to force delete branch issue-5808-db-pool?",
+    "prompt": "git branch -D",
+    "expected": [
+      " issue-5808-db-pool"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how to force delete branch JIRA-8298-db-pool?",
+    "prompt": "git branch -D",
+    "expected": [
+      " JIRA-8298-db-pool"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "merge issue-2301-db-pool",
+    "prompt": "git merge",
+    "expected": [
+      " issue-2301-db-pool"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how do I configure git global username as quinn_patel?",
+    "prompt": "git config --global user.name '",
+    "expected": [
+      "quinn_patel"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "restore analytics2",
+    "prompt": "git restore",
+    "expected": [
+      " analytics2"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how do I discard changes in assets/middleware.rs?",
+    "prompt": "git restore",
+    "expected": [
+      " assets/middleware.rs"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "can you discard uncommitted changes in file hupe.json?",
+    "prompt": "git restore",
+    "expected": [
+      " hupe.json"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I want to inspect line by line authorship in example5",
+    "prompt": "git blame",
+    "expected": [
+      " example5"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I want to create branch dev5 and immediately publish it tracking on production",
+    "prompt": "git checkout -b",
+    "expected": [
+      " dev5"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "please stash with message 'refactor(db): support custom themes and dark mode preferences'",
+    "prompt": "git stash push -m '",
+    "expected": [
+      "refactor(db):"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how to unstage file settings",
+    "prompt": "git restore --staged",
+    "expected": [
+      " settings"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I need to remove branch feat/checkout-cart from remote backup",
+    "prompt": "git push",
+    "expected": [
+      " backup"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I need to inspect line by line authorship in auth9",
+    "prompt": "git blame",
+    "expected": [
+      " auth9"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I need to commit staged changes with message 'fix(config): cleanup unused imports and deprecated functions'",
+    "prompt": "git commit -m '",
+    "expected": [
+      "fix(config):"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "can you change current branch name to dev4?",
+    "prompt": "git branch -m",
+    "expected": [
+      " dev4"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "cherry-pick bd6d350",
+    "prompt": "git cherry-pick",
+    "expected": [
+      " bd6d350"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "diff table.yml",
+    "prompt": "git diff",
+    "expected": [
+      " table.yml"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I need to stage file temp5",
+    "prompt": "git add",
+    "expected": [
+      " temp5"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "show changes made to model7",
+    "prompt": "git diff",
+    "expected": [
+      " model7"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I need to squash merge ticket-8434-mobile-responsive",
+    "prompt": "git merge --squash",
+    "expected": [
+      " ticket-8434-mobile-responsive"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I need to set upstream and push branch bugfix/user-auth to staging",
+    "prompt": "git push -u",
+    "expected": [
+      " staging"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "create branch ticket-9264-logging-v2",
+    "prompt": "git checkout -b",
+    "expected": [
+      " ticket-9264-logging-v2"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how do I cherry pick commit 29807a4?",
+    "prompt": "git cherry-pick",
+    "expected": [
+      " 29807a4"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how to delete the issue-7648-payment-stripe branch locally",
+    "prompt": "git branch -d",
+    "expected": [
+      " issue-7648-payment-stripe"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "please unstage changes in handler4",
+    "prompt": "git restore --staged",
+    "expected": [
+      " handler4"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "please push new branch ticket-9412-user-auth tracking gitlab",
+    "prompt": "git push -u",
+    "expected": [
+      " gitlab"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how can I pull branch sprint1?",
+    "prompt": "git pull origin",
+    "expected": [
+      " sprint1"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "please push bugfix/search-indexing set upstream staging",
+    "prompt": "git push -u",
+    "expected": [
+      " staging"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I want to create branch sprint1",
+    "prompt": "git checkout -b",
+    "expected": [
+      " sprint1"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "I want to add lib/crypto/handler.js to the previous commit without changing the commit message",
+    "prompt": "git add",
+    "expected": [
+      " lib/crypto/handler.js"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "can you push branch ticket-9462-checkout-cart and set upstream to backup?",
+    "prompt": "git push -u",
+    "expected": [
+      " backup"
+    ]
+  },
+  {
+    "category": "Git argument copy",
+    "instruction": "how do I squash merge v2?",
+    "prompt": "git merge --squash",
+    "expected": [
+      " v2"
+    ]
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "can you revert uncommitted changes in data?",
+    "prompt": "",
+    "expected": [
+      "git restore data"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please add git worktree at ../test-db-pool for test/db-pool",
+    "prompt": "",
+    "expected": [
+      "git worktree add ../test-db-pool test/db-pool"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I want to force merge commit when merging jwt-rotation",
+    "prompt": "",
+    "expected": [
+      "git merge --no-ff jwt-rotation"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how can I remove src/env.example2 from staging area without deleting changes?",
+    "prompt": "",
+    "expected": [
+      "git restore --staged src/env.example2"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how do I revert commit 6078d1d in history?",
+    "prompt": "",
+    "expected": [
+      "git revert 6078d1d"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "can you update my local mignon with changes from upstream remote?",
+    "prompt": "",
+    "expected": [
+      "git fetch upstream"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I need to add branch issue-5091-db-pool",
+    "prompt": "",
+    "expected": [
+      "git branch issue-5091-db-pool"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I need to create and switch to new branch ticket-6547-cache-redis",
+    "prompt": "",
+    "expected": [
+      "git checkout -b ticket-6547-cache-redis"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how to force push with lease to gitlab sprint3",
+    "prompt": "",
+    "expected": [
+      "git push --force-with-lease gitlab sprint3"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how do I rebase my work onto branch rate-limiter?",
+    "prompt": "",
+    "expected": [
+      "git rebase rate-limiter"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please set email for current repo to mignon@acme.com",
+    "prompt": "",
+    "expected": [
+      "git config user.email 'mignon@acme.com'"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please apply commit 6eb707e into current branch",
+    "prompt": "",
+    "expected": [
+      "git cherry-pick 6eb707e"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "can you revert commit fa8dbba?",
+    "prompt": "",
+    "expected": [
+      "git revert fa8dbba"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please add git worktree at ../speedup-simd for speedup-simd",
+    "prompt": "",
+    "expected": [
+      "git worktree add ../speedup-simd speedup-simd"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I want to squash merge all commits from branch test4",
+    "prompt": "",
+    "expected": [
+      "git merge --squash test4"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how can I show git blame for test?",
+    "prompt": "",
+    "expected": [
+      "git blame test"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how do I rename current branch to feature/session-store?",
+    "prompt": "",
+    "expected": [
+      "git branch -m feature/session-store"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I want to fetch upstream and merge upstream/JIRA-1897-mobile-responsive into current branch",
+    "prompt": "",
+    "expected": [
+      "git fetch upstream"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "configure local user.email as lucas-lead@dev.io",
+    "prompt": "",
+    "expected": [
+      "git config user.email 'lucas-lead@dev.io'"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "commit with message 'add unit tests for payment webhook endpoints'",
+    "prompt": "",
+    "expected": [
+      "git commit -m 'add unit tests for payment webhook endpoints'"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "can you rebase pull from remote staging test3?",
+    "prompt": "",
+    "expected": [
+      "git pull --rebase staging test3"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how to pull JIRA-8589-search-indexing",
+    "prompt": "",
+    "expected": [
+      "git pull origin JIRA-8589-search-indexing"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how to checkout branch ticket-4166-rate-limiter?",
+    "prompt": "",
+    "expected": [
+      "git checkout ticket-4166-rate-limiter"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how do I checkout new branch staging/payment-stripe and push it to origin setting upstream?",
+    "prompt": "",
+    "expected": [
+      "git checkout -b staging/payment-stripe"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please change user.name to mark55 in current repo",
+    "prompt": "",
+    "expected": [
+      "git config user.name 'mark55'"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how can I merge branch refactor/webhook-listener as a single squashed commit?",
+    "prompt": "",
+    "expected": [
+      "git merge --squash refactor/webhook-listener"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please amend last commit with worker.tmp keeping original message",
+    "prompt": "",
+    "expected": [
+      "git add worker.tmp"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how do I create a new branch issue-9807-dark-mode and switch to it?",
+    "prompt": "",
+    "expected": [
+      "git checkout -b issue-9807-dark-mode"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how to force delete branch issue-5808-db-pool?",
+    "prompt": "",
+    "expected": [
+      "git branch -D issue-5808-db-pool"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how to force delete branch JIRA-8298-db-pool?",
+    "prompt": "",
+    "expected": [
+      "git branch -D JIRA-8298-db-pool"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "merge issue-2301-db-pool",
+    "prompt": "",
+    "expected": [
+      "git merge issue-2301-db-pool"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how do I configure git global username as quinn_patel?",
+    "prompt": "",
+    "expected": [
+      "git config --global user.name 'quinn_patel'"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "restore analytics2",
+    "prompt": "",
+    "expected": [
+      "git restore analytics2"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how do I discard changes in assets/middleware.rs?",
+    "prompt": "",
+    "expected": [
+      "git restore assets/middleware.rs"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "can you discard uncommitted changes in file hupe.json?",
+    "prompt": "",
+    "expected": [
+      "git restore hupe.json"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I want to inspect line by line authorship in example5",
+    "prompt": "",
+    "expected": [
+      "git blame example5"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I want to create branch dev5 and immediately publish it tracking on production",
+    "prompt": "",
+    "expected": [
+      "git checkout -b dev5"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please stash with message 'refactor(db): support custom themes and dark mode preferences'",
+    "prompt": "",
+    "expected": [
+      "git stash push -m 'refactor(db): support custom themes and dark mode preferences'"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how to unstage file settings",
+    "prompt": "",
+    "expected": [
+      "git restore --staged settings"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I need to remove branch feat/checkout-cart from remote backup",
+    "prompt": "",
+    "expected": [
+      "git push backup --delete feat/checkout-cart"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I need to inspect line by line authorship in auth9",
+    "prompt": "",
+    "expected": [
+      "git blame auth9"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I need to commit staged changes with message 'fix(config): cleanup unused imports and deprecated functions'",
+    "prompt": "",
+    "expected": [
+      "git commit -m 'fix(config): cleanup unused imports and deprecated functions'"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please save current uncommitted work and switch to new branch production",
+    "prompt": "",
+    "expected": [
+      "git stash"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "can you change current branch name to dev4?",
+    "prompt": "",
+    "expected": [
+      "git branch -m dev4"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "cherry-pick bd6d350",
+    "prompt": "",
+    "expected": [
+      "git cherry-pick bd6d350"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "diff table.yml",
+    "prompt": "",
+    "expected": [
+      "git diff table.yml"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I need to stage file temp5",
+    "prompt": "",
+    "expected": [
+      "git add temp5"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "show changes made to model7",
+    "prompt": "",
+    "expected": [
+      "git diff model7"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I need to squash merge ticket-8434-mobile-responsive",
+    "prompt": "",
+    "expected": [
+      "git merge --squash ticket-8434-mobile-responsive"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I need to set upstream and push branch bugfix/user-auth to staging",
+    "prompt": "",
+    "expected": [
+      "git push -u staging bugfix/user-auth"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "create branch ticket-9264-logging-v2",
+    "prompt": "",
+    "expected": [
+      "git checkout -b ticket-9264-logging-v2"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how do I cherry pick commit 29807a4?",
+    "prompt": "",
+    "expected": [
+      "git cherry-pick 29807a4"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how to delete the issue-7648-payment-stripe branch locally",
+    "prompt": "",
+    "expected": [
+      "git branch -d issue-7648-payment-stripe"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please unstage changes in handler4",
+    "prompt": "",
+    "expected": [
+      "git restore --staged handler4"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please push new branch ticket-9412-user-auth tracking gitlab",
+    "prompt": "",
+    "expected": [
+      "git push -u gitlab ticket-9412-user-auth"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "how can I pull branch sprint1?",
+    "prompt": "",
+    "expected": [
+      "git pull origin sprint1"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "please push bugfix/search-indexing set upstream staging",
+    "prompt": "",
+    "expected": [
+      "git push -u staging bugfix/search-indexing"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I want to create branch sprint1",
+    "prompt": "",
+    "expected": [
+      "git checkout -b sprint1"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "I want to add lib/crypto/handler.js to the previous commit without changing the commit message",
+    "prompt": "",
+    "expected": [
+      "git add lib/crypto/handler.js"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (seen intent)",
+    "instruction": "can you push branch ticket-9462-checkout-cart and set upstream to backup?",
+    "prompt": "",
+    "expected": [
+      "git push -u backup ticket-9462-checkout-cart"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how can I list all branches including remotes?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how can I view all branches in repo?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "list valid merge tools",
+    "prompt": "",
+    "expected": [
+      "git mergetool --tool-help"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "fetch the latest changes from the default remote upstream repository (if set)",
+    "prompt": "",
+    "expected": [
+      "git fetch"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "stash all changes including untracked files",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "can you list all branches?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "update submodules to their latest commits",
+    "prompt": "",
+    "expected": [
+      "git submodule update --remote"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "list all branches including remotes",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "stash untracked",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how do I show staged changes?",
+    "prompt": "",
+    "expected": [
+      "git diff --cached"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "please show staged changes",
+    "prompt": "",
+    "expected": [
+      "git diff --cached"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how do I list all branches including remotes?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "remove a file from all commits: heq.json",
+    "prompt": "",
+    "expected": [
+      "git filter-branch --tree-filter 'rm -f heq.json' HEAD"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how to stash untracked files too?",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how to force push safely without overwriting other's work?",
+    "prompt": "",
+    "expected": [
+      "git push --force-with-lease"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "can you stash all changes including untracked files?",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "can you list all branches including remotes?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "explicitly use the regular merge tool (see the `merge.tool` configuration variable)",
+    "prompt": "",
+    "expected": [
+      "git mergetool --no-gui"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "please show both local and remote branches",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "I want to stash all changes including untracked files",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "stash everything including new untracked files",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how do I stash everything including new untracked files?",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "also auto-launch a web browser",
+    "prompt": "",
+    "expected": [
+      "git instaweb --start --browser"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "I need to list all branches including remotes",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how can I show staged changes?",
+    "prompt": "",
+    "expected": [
+      "git diff --cached"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "view all branches in repo",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "can you view all branches in repo?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "list local, global, or system configuration entries and show their file location",
+    "prompt": "",
+    "expected": [
+      "git config --system --list --show-origin"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "I want to list all branches",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "I want to stash everything including new untracked files",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "I want to show staged changes",
+    "prompt": "",
+    "expected": [
+      "git diff --cached"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "can you show both local and remote branches?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "listen on a specific port",
+    "prompt": "",
+    "expected": [
+      "git instaweb --start --port 1234"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "please stash everything including new untracked files",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "show the reflog for `HEAD`",
+    "prompt": "",
+    "expected": [
+      "git reflog"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "can you show staged changes?",
+    "prompt": "",
+    "expected": [
+      "git diff --cached"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how to show staged changes",
+    "prompt": "",
+    "expected": [
+      "git diff --cached"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "I need to view all branches in repo",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "display more verbose information, displaying sizes in human-readable units",
+    "prompt": "",
+    "expected": [
+      "git count-objects -H -v"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how do I see remote branches too?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "list all branches",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how to view all branches in repo",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "I want to show both local and remote branches",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how can I show both local and remote branches?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "suppress all output",
+    "prompt": "",
+    "expected": [
+      "git gc --quiet"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "I need to show both local and remote branches",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "stash current changes, including new untracked files",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how to show both local and remote branches",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how to list all branches",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how do I show both local and remote branches?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "please list all branches",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "please list all branches including remotes",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how to stash all changes including untracked files",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "I need to stash all changes including untracked files",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how can I stash all changes including untracked files?",
+    "prompt": "",
+    "expected": [
+      "git stash -u"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "please view all branches in repo",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "how do I view all branches in repo?",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "delete untracked files and e[x]cluded files (those listed in `.gitignore` and `.git/info/exclude`)",
+    "prompt": "",
+    "expected": [
+      "git clean -f -x"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "I want to view all branches in repo",
+    "prompt": "",
+    "expected": [
+      "git branch -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git full command (unseen intent)",
+    "instruction": "show staged changes",
+    "prompt": "",
+    "expected": [
+      "git diff --cached"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I want to force merge commit when merging jwt-rotation",
+    "prompt": "git merge",
+    "expected": [
+      " --no-ff"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how can I remove src/env.example2 from staging area without deleting changes?",
+    "prompt": "git restore",
+    "expected": [
+      " --staged"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I need to create and switch to new branch ticket-6547-cache-redis",
+    "prompt": "git checkout",
+    "expected": [
+      " -b"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how to force push with lease to gitlab sprint3",
+    "prompt": "git push",
+    "expected": [
+      " --force-with-lease"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I want to squash merge all commits from branch test4",
+    "prompt": "git merge",
+    "expected": [
+      " --squash"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I rename current branch to feature/session-store?",
+    "prompt": "git branch",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "commit with message 'add unit tests for payment webhook endpoints'",
+    "prompt": "git commit",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "can you rebase pull from remote staging test3?",
+    "prompt": "git pull",
+    "expected": [
+      " --rebase"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I checkout new branch staging/payment-stripe and push it to origin setting upstream?",
+    "prompt": "git checkout",
+    "expected": [
+      " -b"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how can I merge branch refactor/webhook-listener as a single squashed commit?",
+    "prompt": "git merge",
+    "expected": [
+      " --squash"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I create a new branch issue-9807-dark-mode and switch to it?",
+    "prompt": "git checkout",
+    "expected": [
+      " -b"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how to force delete branch issue-5808-db-pool?",
+    "prompt": "git branch",
+    "expected": [
+      " -D"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how to force delete branch JIRA-8298-db-pool?",
+    "prompt": "git branch",
+    "expected": [
+      " -D"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I configure git global username as quinn_patel?",
+    "prompt": "git config",
+    "expected": [
+      " --global"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I want to create branch dev5 and immediately publish it tracking on production",
+    "prompt": "git checkout",
+    "expected": [
+      " -b"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how to unstage file settings",
+    "prompt": "git restore",
+    "expected": [
+      " --staged"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I need to commit staged changes with message 'fix(config): cleanup unused imports and deprecated functions'",
+    "prompt": "git commit",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "can you change current branch name to dev4?",
+    "prompt": "git branch",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I need to squash merge ticket-8434-mobile-responsive",
+    "prompt": "git merge",
+    "expected": [
+      " --squash"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I need to set upstream and push branch bugfix/user-auth to staging",
+    "prompt": "git push",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "create branch ticket-9264-logging-v2",
+    "prompt": "git checkout",
+    "expected": [
+      " -b"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how to delete the issue-7648-payment-stripe branch locally",
+    "prompt": "git branch",
+    "expected": [
+      " -d"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "please unstage changes in handler4",
+    "prompt": "git restore",
+    "expected": [
+      " --staged"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "please push new branch ticket-9412-user-auth tracking gitlab",
+    "prompt": "git push",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "please push bugfix/search-indexing set upstream staging",
+    "prompt": "git push",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I want to create branch sprint1",
+    "prompt": "git checkout",
+    "expected": [
+      " -b"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "can you push branch ticket-9462-checkout-cart and set upstream to backup?",
+    "prompt": "git push",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I squash merge v2?",
+    "prompt": "git merge",
+    "expected": [
+      " --squash"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "please force remove local branch issue-4164-user-auth",
+    "prompt": "git branch",
+    "expected": [
+      " -D"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "can you safely delete branch user-auth?",
+    "prompt": "git branch",
+    "expected": [
+      " -d"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I need to create and switch to new branch feat/webhook-listener",
+    "prompt": "git checkout",
+    "expected": [
+      " -b"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "please edit last commit message to 'refactor(auth): update project dependencies to latest versions'",
+    "prompt": "git commit",
+    "expected": [
+      " --amend"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I add everything, commit 'perf(db): implement JWT refresh token rotation' and push origin v5?",
+    "prompt": "git add",
+    "expected": [
+      " -A"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I need to delete merged branch JIRA-3325-login",
+    "prompt": "git branch",
+    "expected": [
+      " -d"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how can I delete the JIRA-9067-api-gateway branch locally?",
+    "prompt": "git branch",
+    "expected": [
+      " -d"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I continue rebase after resolving conflicts?",
+    "prompt": "git rebase",
+    "expected": [
+      " --continue"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I want to stage tracked files and commit with 'perf(core): update project dependencies to latest versions'",
+    "prompt": "git commit",
+    "expected": [
+      " -am"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how to delete local branch dev3",
+    "prompt": "git branch",
+    "expected": [
+      " -d"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I rename the current branch to dev2?",
+    "prompt": "git branch",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I merge branch staging as a single squashed commit?",
+    "prompt": "git merge",
+    "expected": [
+      " --squash"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "push test3 set upstream staging",
+    "prompt": "git push",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I need to rename current branch to release5",
+    "prompt": "git branch",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I need to force merge commit when merging chore/dark-mode",
+    "prompt": "git merge",
+    "expected": [
+      " --no-ff"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I need to add and commit all tracked changes with message 'refactor database connection pool singleton'",
+    "prompt": "git commit",
+    "expected": [
+      " -am"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how can I make a commit saying 'perf(cli): add rate limiting middleware to public api'?",
+    "prompt": "git commit",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how to create annotated release tag v2.13.19 with message 'test(core): accelerate CA forward pass with AVX2 SIMD'",
+    "prompt": "git tag",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how can I show short format status?",
+    "prompt": "git status",
+    "expected": [
+      " -s"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "can you create and switch to new branch user-auth?",
+    "prompt": "git checkout",
+    "expected": [
+      " -b"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I merge branch fix/logging-v2 as a single squashed commit?",
+    "prompt": "git merge",
+    "expected": [
+      " --squash"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "git pull rebase from backup main",
+    "prompt": "git pull",
+    "expected": [
+      " --rebase"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how to rebase pull from remote upstream sprint4",
+    "prompt": "git pull",
+    "expected": [
+      " --rebase"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I want to commit all modified files directly with message 'resolve layout overflow on mobile navigation bar'",
+    "prompt": "git commit",
+    "expected": [
+      " -am"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I need to stage tracked files and commit with 'refactor(db): add rate limiting middleware to public api'",
+    "prompt": "git commit",
+    "expected": [
+      " -am"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I unstage doxuz.rs?",
+    "prompt": "git restore",
+    "expected": [
+      " --staged"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I commit using comment 'fix(api): cleanup unused imports and deprecated functions'?",
+    "prompt": "git commit",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "please start a new branch dev3",
+    "prompt": "git checkout",
+    "expected": [
+      " -b"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how do I set my global email to yara73@acme.com?",
+    "prompt": "git config",
+    "expected": [
+      " --global"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "I want to force merge commit when merging feature/oauth2-flow",
+    "prompt": "git merge",
+    "expected": [
+      " --no-ff"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how can I commit changes with message 'support custom themes and dark mode preferences'?",
+    "prompt": "git commit",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Git option (seen intent)",
+    "instruction": "how to rename current branch to ticket-180-user-auth",
+    "prompt": "git branch",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how can I list all branches including remotes?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how can I view all branches in repo?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "list valid merge tools",
+    "prompt": "git mergetool",
+    "expected": [
+      " --tool-help"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "stash all changes including untracked files",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "can you list all branches?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "list all branches including remotes",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "stash untracked",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how do I show staged changes?",
+    "prompt": "git diff",
+    "expected": [
+      " --cached"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "please show staged changes",
+    "prompt": "git diff",
+    "expected": [
+      " --cached"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how do I list all branches including remotes?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "remove a file from all commits: heq.json",
+    "prompt": "git filter-branch",
+    "expected": [
+      " --tree-filter"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how to stash untracked files too?",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how to force push safely without overwriting other's work?",
+    "prompt": "git push",
+    "expected": [
+      " --force-with-lease"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "can you stash all changes including untracked files?",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "can you list all branches including remotes?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "explicitly use the regular merge tool (see the `merge.tool` configuration variable)",
+    "prompt": "git mergetool",
+    "expected": [
+      " --no-gui"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "please show both local and remote branches",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "I want to stash all changes including untracked files",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "stash everything including new untracked files",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how do I stash everything including new untracked files?",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "also auto-launch a web browser",
+    "prompt": "git instaweb",
+    "expected": [
+      " --start"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "I need to list all branches including remotes",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how can I show staged changes?",
+    "prompt": "git diff",
+    "expected": [
+      " --cached"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "view all branches in repo",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "can you view all branches in repo?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "list local, global, or system configuration entries and show their file location",
+    "prompt": "git config",
+    "expected": [
+      " --system"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "I want to list all branches",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "I want to stash everything including new untracked files",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "I want to show staged changes",
+    "prompt": "git diff",
+    "expected": [
+      " --cached"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "can you show both local and remote branches?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "listen on a specific port",
+    "prompt": "git instaweb",
+    "expected": [
+      " --start"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "please stash everything including new untracked files",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "can you show staged changes?",
+    "prompt": "git diff",
+    "expected": [
+      " --cached"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how to show staged changes",
+    "prompt": "git diff",
+    "expected": [
+      " --cached"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "I need to view all branches in repo",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "display more verbose information, displaying sizes in human-readable units",
+    "prompt": "git count-objects",
+    "expected": [
+      " -H"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how do I see remote branches too?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "list all branches",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how to view all branches in repo",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "I want to show both local and remote branches",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how can I show both local and remote branches?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "suppress all output",
+    "prompt": "git gc",
+    "expected": [
+      " --quiet"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "I need to show both local and remote branches",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "stash current changes, including new untracked files",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how to show both local and remote branches",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how to list all branches",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how do I show both local and remote branches?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "please list all branches",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "please list all branches including remotes",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how to stash all changes including untracked files",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "I need to stash all changes including untracked files",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how can I stash all changes including untracked files?",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "please view all branches in repo",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "how do I view all branches in repo?",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "delete untracked files and e[x]cluded files (those listed in `.gitignore` and `.git/info/exclude`)",
+    "prompt": "git clean",
+    "expected": [
+      " -f"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "I want to view all branches in repo",
+    "prompt": "git branch",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "show staged changes",
+    "prompt": "git diff",
+    "expected": [
+      " --cached"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "can you stash everything including new untracked files?",
+    "prompt": "git stash",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "display a list of all available Git subcommands",
+    "prompt": "git help",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Git option (unseen intent)",
+    "instruction": "switch to a branch and update all submodules to match: ticket-2578-db-pool",
+    "prompt": "git switch",
+    "expected": [
+      " --recurse-submodules"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "can you revert uncommitted changes in data?",
+    "prompt": "git",
+    "expected": [
+      " restore"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please add git worktree at ../test-db-pool for test/db-pool",
+    "prompt": "git",
+    "expected": [
+      " worktree"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I want to force merge commit when merging jwt-rotation",
+    "prompt": "git",
+    "expected": [
+      " merge"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how can I remove src/env.example2 from staging area without deleting changes?",
+    "prompt": "git",
+    "expected": [
+      " restore"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how do I revert commit 6078d1d in history?",
+    "prompt": "git",
+    "expected": [
+      " revert"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "can you update my local mignon with changes from upstream remote?",
+    "prompt": "git",
+    "expected": [
+      " fetch"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I need to add branch issue-5091-db-pool",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I need to create and switch to new branch ticket-6547-cache-redis",
+    "prompt": "git",
+    "expected": [
+      " checkout"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how to force push with lease to gitlab sprint3",
+    "prompt": "git",
+    "expected": [
+      " push"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how do I rebase my work onto branch rate-limiter?",
+    "prompt": "git",
+    "expected": [
+      " rebase"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please set email for current repo to mignon@acme.com",
+    "prompt": "git",
+    "expected": [
+      " config"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please apply commit 6eb707e into current branch",
+    "prompt": "git",
+    "expected": [
+      " cherry-pick"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "can you revert commit fa8dbba?",
+    "prompt": "git",
+    "expected": [
+      " revert"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please add git worktree at ../speedup-simd for speedup-simd",
+    "prompt": "git",
+    "expected": [
+      " worktree"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I want to squash merge all commits from branch test4",
+    "prompt": "git",
+    "expected": [
+      " merge"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how can I show git blame for test?",
+    "prompt": "git",
+    "expected": [
+      " blame"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how do I rename current branch to feature/session-store?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I want to fetch upstream and merge upstream/JIRA-1897-mobile-responsive into current branch",
+    "prompt": "git",
+    "expected": [
+      " fetch"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "configure local user.email as lucas-lead@dev.io",
+    "prompt": "git",
+    "expected": [
+      " config"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "commit with message 'add unit tests for payment webhook endpoints'",
+    "prompt": "git",
+    "expected": [
+      " commit"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "can you rebase pull from remote staging test3?",
+    "prompt": "git",
+    "expected": [
+      " pull"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how to pull JIRA-8589-search-indexing",
+    "prompt": "git",
+    "expected": [
+      " pull"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how to checkout branch ticket-4166-rate-limiter?",
+    "prompt": "git",
+    "expected": [
+      " checkout"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how do I checkout new branch staging/payment-stripe and push it to origin setting upstream?",
+    "prompt": "git",
+    "expected": [
+      " checkout"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please change user.name to mark55 in current repo",
+    "prompt": "git",
+    "expected": [
+      " config"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how can I merge branch refactor/webhook-listener as a single squashed commit?",
+    "prompt": "git",
+    "expected": [
+      " merge"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please amend last commit with worker.tmp keeping original message",
+    "prompt": "git",
+    "expected": [
+      " add"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how do I create a new branch issue-9807-dark-mode and switch to it?",
+    "prompt": "git",
+    "expected": [
+      " checkout"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how to force delete branch issue-5808-db-pool?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how to force delete branch JIRA-8298-db-pool?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "merge issue-2301-db-pool",
+    "prompt": "git",
+    "expected": [
+      " merge"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how do I configure git global username as quinn_patel?",
+    "prompt": "git",
+    "expected": [
+      " config"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "restore analytics2",
+    "prompt": "git",
+    "expected": [
+      " restore"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how do I discard changes in assets/middleware.rs?",
+    "prompt": "git",
+    "expected": [
+      " restore"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "can you discard uncommitted changes in file hupe.json?",
+    "prompt": "git",
+    "expected": [
+      " restore"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I want to inspect line by line authorship in example5",
+    "prompt": "git",
+    "expected": [
+      " blame"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I want to create branch dev5 and immediately publish it tracking on production",
+    "prompt": "git",
+    "expected": [
+      " checkout"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please stash with message 'refactor(db): support custom themes and dark mode preferences'",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how to unstage file settings",
+    "prompt": "git",
+    "expected": [
+      " restore"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I need to remove branch feat/checkout-cart from remote backup",
+    "prompt": "git",
+    "expected": [
+      " push"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I need to inspect line by line authorship in auth9",
+    "prompt": "git",
+    "expected": [
+      " blame"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I need to commit staged changes with message 'fix(config): cleanup unused imports and deprecated functions'",
+    "prompt": "git",
+    "expected": [
+      " commit"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please save current uncommitted work and switch to new branch production",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "can you change current branch name to dev4?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "cherry-pick bd6d350",
+    "prompt": "git",
+    "expected": [
+      " cherry-pick"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "diff table.yml",
+    "prompt": "git",
+    "expected": [
+      " diff"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I need to stage file temp5",
+    "prompt": "git",
+    "expected": [
+      " add"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "show changes made to model7",
+    "prompt": "git",
+    "expected": [
+      " diff"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I need to squash merge ticket-8434-mobile-responsive",
+    "prompt": "git",
+    "expected": [
+      " merge"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I need to set upstream and push branch bugfix/user-auth to staging",
+    "prompt": "git",
+    "expected": [
+      " push"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "create branch ticket-9264-logging-v2",
+    "prompt": "git",
+    "expected": [
+      " checkout"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how do I cherry pick commit 29807a4?",
+    "prompt": "git",
+    "expected": [
+      " cherry-pick"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how to delete the issue-7648-payment-stripe branch locally",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please unstage changes in handler4",
+    "prompt": "git",
+    "expected": [
+      " restore"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please push new branch ticket-9412-user-auth tracking gitlab",
+    "prompt": "git",
+    "expected": [
+      " push"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "how can I pull branch sprint1?",
+    "prompt": "git",
+    "expected": [
+      " pull"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "please push bugfix/search-indexing set upstream staging",
+    "prompt": "git",
+    "expected": [
+      " push"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I want to create branch sprint1",
+    "prompt": "git",
+    "expected": [
+      " checkout"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "I want to add lib/crypto/handler.js to the previous commit without changing the commit message",
+    "prompt": "git",
+    "expected": [
+      " add"
+    ]
+  },
+  {
+    "category": "Git subcommand (seen intent)",
+    "instruction": "can you push branch ticket-9462-checkout-cart and set upstream to backup?",
+    "prompt": "git",
+    "expected": [
+      " push"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how can I list all branches including remotes?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how can I view all branches in repo?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "list valid merge tools",
+    "prompt": "git",
+    "expected": [
+      " mergetool"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "fetch the latest changes from the default remote upstream repository (if set)",
+    "prompt": "git",
+    "expected": [
+      " fetch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "stash all changes including untracked files",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "can you list all branches?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "update submodules to their latest commits",
+    "prompt": "git",
+    "expected": [
+      " submodule"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "list all branches including remotes",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "stash untracked",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how do I show staged changes?",
+    "prompt": "git",
+    "expected": [
+      " diff"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "please show staged changes",
+    "prompt": "git",
+    "expected": [
+      " diff"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how do I list all branches including remotes?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "remove a file from all commits: heq.json",
+    "prompt": "git",
+    "expected": [
+      " filter-branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how to stash untracked files too?",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how to force push safely without overwriting other's work?",
+    "prompt": "git",
+    "expected": [
+      " push"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "can you stash all changes including untracked files?",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "can you list all branches including remotes?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "explicitly use the regular merge tool (see the `merge.tool` configuration variable)",
+    "prompt": "git",
+    "expected": [
+      " mergetool"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "please show both local and remote branches",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "I want to stash all changes including untracked files",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "stash everything including new untracked files",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how do I stash everything including new untracked files?",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "also auto-launch a web browser",
+    "prompt": "git",
+    "expected": [
+      " instaweb"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "I need to list all branches including remotes",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how can I show staged changes?",
+    "prompt": "git",
+    "expected": [
+      " diff"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "view all branches in repo",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "can you view all branches in repo?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "list local, global, or system configuration entries and show their file location",
+    "prompt": "git",
+    "expected": [
+      " config"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "I want to list all branches",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "I want to stash everything including new untracked files",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "I want to show staged changes",
+    "prompt": "git",
+    "expected": [
+      " diff"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "can you show both local and remote branches?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "listen on a specific port",
+    "prompt": "git",
+    "expected": [
+      " instaweb"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "please stash everything including new untracked files",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "show the reflog for `HEAD`",
+    "prompt": "git",
+    "expected": [
+      " reflog"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "can you show staged changes?",
+    "prompt": "git",
+    "expected": [
+      " diff"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how to show staged changes",
+    "prompt": "git",
+    "expected": [
+      " diff"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "I need to view all branches in repo",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "display more verbose information, displaying sizes in human-readable units",
+    "prompt": "git",
+    "expected": [
+      " count-objects"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how do I see remote branches too?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "list all branches",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how to view all branches in repo",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "I want to show both local and remote branches",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how can I show both local and remote branches?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "suppress all output",
+    "prompt": "git",
+    "expected": [
+      " gc"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "I need to show both local and remote branches",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "stash current changes, including new untracked files",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how to show both local and remote branches",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how to list all branches",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how do I show both local and remote branches?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "please list all branches",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "please list all branches including remotes",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how to stash all changes including untracked files",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "I need to stash all changes including untracked files",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how can I stash all changes including untracked files?",
+    "prompt": "git",
+    "expected": [
+      " stash"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "please view all branches in repo",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "how do I view all branches in repo?",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "delete untracked files and e[x]cluded files (those listed in `.gitignore` and `.git/info/exclude`)",
+    "prompt": "git",
+    "expected": [
+      " clean"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "I want to view all branches in repo",
+    "prompt": "git",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Git subcommand (unseen intent)",
+    "instruction": "show staged changes",
+    "prompt": "git",
+    "expected": [
+      " diff"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "To save a snapshot of your work in git, you make a",
+    "expected": [
+      " commit"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "Before you commit a file, you have to add it to the staging",
+    "expected": [
+      " area"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "A copy of a repository on your own computer is called a local",
+    "expected": [
+      " copy",
+      " repository",
+      " clone"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "To get the latest changes from the server, run git",
+    "expected": [
+      " pull",
+      " fetch"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "To send your commits to the server, run git",
+    "expected": [
+      " push"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "To see which files changed, run git",
+    "expected": [
+      " status",
+      " diff"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "Two people changed the same line, so git reported a merge",
+    "expected": [
+      " conflict"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "Each commit has a short message that describes the",
+    "expected": [
+      " change",
+      " changes",
+      " commit"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "A branch lets you work on a new feature without changing the main",
+    "expected": [
+      " branch"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "If the program crashes, read the error",
+    "expected": [
+      " message"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "Open a terminal and type the",
+    "expected": [
+      " command"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "The file is saved in the project",
+    "expected": [
+      " folder",
+      " directory"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "Run the tests before you",
+    "expected": [
+      " commit",
+      " push",
+      " merge"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "Files listed in .gitignore are not",
+    "expected": [
+      " tracked",
+      " added",
+      " committed"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "To download a repository for the first time, run git",
+    "expected": [
+      " clone"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "You can undo the last commit with git",
+    "expected": [
+      " reset",
+      " revert"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "The server rejected the push because the remote has new",
+    "expected": [
+      " commits",
+      " changes"
+    ]
+  },
+  {
+    "category": "Technical English",
+    "prompt": "Your name and email are stored in the git",
+    "expected": [
+      " config",
+      " configuration"
+    ]
+  }
+]

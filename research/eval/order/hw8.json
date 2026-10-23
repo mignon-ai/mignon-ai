@@ -1,0 +1,342 @@
+[
+ {
+  "instruction": "show orders status shipped",
+  "output": "orders find --status shipped"
+ },
+ {
+  "instruction": "show unpaid orders for beauty category",
+  "output": "orders find --status unpaid --category beauty"
+ },
+ {
+  "instruction": "orders status unpaid placed yesterday",
+  "output": "orders find --status unpaid --when yesterday"
+ },
+ {
+  "instruction": "Please look up the order with number 967028.",
+  "output": "orders find --id 967028"
+ },
+ {
+  "instruction": "show me overdue sports orders",
+  "output": "orders find --status overdue --category sports"
+ },
+ {
+  "instruction": "Count paid orders",
+  "output": "orders count --status paid"
+ },
+ {
+  "instruction": "Find orders for customer 'Globex Tanaka' and count them.",
+  "output": "orders count --customer \"Globex Tanaka\""
+ },
+ {
+  "instruction": "show unpaid: toys: >=2500",
+  "output": "orders find --status unpaid --category toys --min-amount 2500"
+ },
+ {
+  "instruction": "Count orders placed in the last 16 days. Use order-search tool.",
+  "output": "orders count --last-days 16"
+ },
+ {
+  "instruction": "Show orders where status is unpaid and category is home.",
+  "output": "orders find --status unpaid --category home"
+ },
+ {
+  "instruction": "show orders placed this month for customer Aperture Garcia sorted newest first",
+  "output": "orders find --when this-month --customer \"Aperture Garcia\" --sort newest"
+ },
+ {
+  "instruction": "Show orders with status as refunded.",
+  "output": "orders find --status refunded"
+ },
+ {
+  "instruction": "show list refunded 2019 books",
+  "output": "orders find --status refunded --category books --year 2019"
+ },
+ {
+  "instruction": "Show overdue orders for sports placed today, sorted by highest total first.",
+  "output": "orders find --status overdue --category sports --when today --sort highest"
+ },
+ {
+  "instruction": "show me orders shipped for beauty item price>=600",
+  "output": "orders find --status shipped --category beauty --min-amount 600"
+ },
+ {
+  "instruction": "find order 725",
+  "output": "orders find --id 725"
+ },
+ {
+  "instruction": "show me all beauty orders sorted by lowest price first",
+  "output": "orders find --category beauty --sort lowest"
+ },
+ {
+  "instruction": "show me list of pending orders newest first where price is at most 20$",
+  "output": "orders find --status pending --max-amount 20 --sort newest"
+ },
+ {
+  "instruction": "show orders placed in April 2022 status is paid",
+  "output": "orders find --status paid --month april --year 2022"
+ },
+ {
+  "instruction": "Show Orders Placed In 2018 For Beauty Category With Refunded Status",
+  "output": "orders find --status refunded --category beauty --year 2018"
+ },
+ {
+  "instruction": "Look up the order with number 490, include only order number, order date, and order items.",
+  "output": "orders find --id 490"
+ },
+ {
+  "instruction": "look up order 437 pls",
+  "output": "orders find --id 437"
+ },
+ {
+  "instruction": "Please show orders with order status as unpaid, grocery category, order amount of at least 25 dollars, and placed this year.",
+  "output": "orders find --status unpaid --category groceries --min-amount 25 --when this-year"
+ },
+ {
+  "instruction": "Find the total order amount for orders placed by customer Quopesuf Labs with order status cancelled and product category sports.",
+  "output": "orders total --status cancelled --category sports --customer \"Quopesuf Labs\""
+ },
+ {
+  "instruction": "show pending orders for groceries placed this yr amt<=982",
+  "output": "orders find --status pending --category groceries --max-amount 982 --when this-year"
+ },
+ {
+  "instruction": "Please show a list of orders; placed in the last 71 days; category is sports.",
+  "output": "orders find --category sports --last-days 71"
+ },
+ {
+  "instruction": "show orders for customer \"Priya Ivanov\" where order amount is <= 60 sorted by order date ASC",
+  "output": "orders find --max-amount 60 --customer \"Priya Ivanov\" --sort oldest"
+ },
+ {
+  "instruction": "show orders where status is unpaid and category is electronics and placed this year",
+  "output": "orders find --status unpaid --category electronics --when this-year"
+ },
+ {
+  "instruction": "Search for orders with status \"unpaid\" and category \"sports\" to add up the total.",
+  "output": "orders total --status unpaid --category sports"
+ },
+ {
+  "instruction": "show list of orders; sort by date added; filter by groceries; newest first.",
+  "output": "orders find --category groceries --sort newest"
+ },
+ {
+  "instruction": "Show orders for customer Hooli Nowak with overdue status and groceries category.",
+  "output": "orders find --status overdue --category groceries --customer \"Hooli Nowak\""
+ },
+ {
+  "instruction": "count toys orders cancelled",
+  "output": "orders count --status cancelled --category toys"
+ },
+ {
+  "instruction": "Count orders for customer Ravi with status cancelled placed in last 19 days",
+  "output": "orders count --status cancelled --last-days 19 --customer Ravi"
+ },
+ {
+  "instruction": "Show list of orders; filter by category: beauty.",
+  "output": "orders find --category beauty"
+ },
+ {
+  "instruction": "Order count for Grace Karagiannis, toys orders only",
+  "output": "orders count --category toys --customer \"Grace Karagiannis\""
+ },
+ {
+  "instruction": "show me orders where status is paid sorted by amount asc",
+  "output": "orders find --status paid --sort lowest"
+ },
+ {
+  "instruction": "Find order with number 828515 using the order-search tool. Please look up the details without repeating the description.",
+  "output": "orders find --id 828515"
+ },
+ {
+  "instruction": "Show Overdue Orders for Home Category",
+  "output": "orders find --status overdue --category home"
+ },
+ {
+  "instruction": "show pending orders for groceries",
+  "output": "orders find --status pending --category groceries"
+ },
+ {
+  "instruction": "show unpaid orders placed within last 30 days sorted by lowest amount first only 19",
+  "output": "orders find --status unpaid --last-days 30 --sort lowest --limit 19"
+ },
+ {
+  "instruction": "Please show a list of orders with a total amount of at least 18534 dollars.",
+  "output": "orders find --min-amount 18534"
+ },
+ {
+  "instruction": "Created orders placed on June 24; status is pending.",
+  "output": "orders find --status pending --month june --day 24"
+ },
+ {
+  "instruction": "show orders for customer Tekarlos where order status is shipped sorted by order date asc and amount <= 8758",
+  "output": "orders find --status shipped --max-amount 8758 --customer Tekarlos --sort oldest"
+ },
+ {
+  "instruction": "show me unpaid orders for groceries that cost >=941",
+  "output": "orders find --status unpaid --category groceries --min-amount 941"
+ },
+ {
+  "instruction": "show orders: refunded; price>=75; placed Aug 18",
+  "output": "orders find --status refunded --min-amount 75 --month august --day 18"
+ },
+ {
+  "instruction": "Search for orders where customer is nadia, total amount is at most 967 dollars, and category is clothing. Sum up these orders.",
+  "output": "orders total --category clothing --max-amount 967 --customer nadia"
+ },
+ {
+  "instruction": "count shipped orders this 10 days for toys only",
+  "output": "orders count --status shipped --category toys --last-days 10"
+ },
+ {
+  "instruction": "find count of orders w/ paid status & books cat",
+  "output": "orders count --status paid --category books"
+ },
+ {
+  "instruction": "Please show orders; status is refunded; category is sports; placed last year.",
+  "output": "orders find --status refunded --category sports --when last-year"
+ },
+ {
+  "instruction": "Show orders with status as overdue, category as electronics.",
+  "output": "orders find --status overdue --category electronics"
+ },
+ {
+  "instruction": "Please show a list of orders: paid; home; placed this week.",
+  "output": "orders find --status paid --category home --when this-week"
+ },
+ {
+  "instruction": "show cancelled orders placed this month for customer Thomas",
+  "output": "orders find --status cancelled --when this-month --customer Thomas"
+ },
+ {
+  "instruction": "Show orders for books placed today.",
+  "output": "orders find --category books --when today"
+ },
+ {
+  "instruction": "Show orders with status \"pending\" and category \"home\".",
+  "output": "orders find --status pending --category home"
+ },
+ {
+  "instruction": "Order Number: 826",
+  "output": "orders find --id 826"
+ },
+ {
+  "instruction": "sum: groceries; $4-$1500",
+  "output": "orders total --category groceries --min-amount 4 --max-amount 1500"
+ },
+ {
+  "instruction": "Count the orders; status is paid; placed in the last 365 days. Use order_search tool.",
+  "output": "orders count --status paid --last-days 365"
+ },
+ {
+  "instruction": "show overdue; sports; price 7-75",
+  "output": "orders find --status overdue --category sports --min-amount 7 --max-amount 75"
+ },
+ {
+  "instruction": "Show orders with orderAmount between 982 and 4640 dollars and orderStatus overdue, sorted by orderAmount in ascending order.",
+  "output": "orders find --status overdue --min-amount 982 --max-amount 4640 --sort lowest"
+ },
+ {
+  "instruction": "From the last 60 days, please show a list of orders sorted by order amount in ascending order, limit to 1 order per result.",
+  "output": "orders find --last-days 60 --sort lowest --limit 1"
+ },
+ {
+  "instruction": "Count orders where category is home.",
+  "output": "orders count --category home"
+ },
+ {
+  "instruction": "lookup order 94570",
+  "output": "orders find --id 94570"
+ },
+ {
+  "instruction": "order_number: 66537",
+  "output": "orders find --id 66537"
+ },
+ {
+  "instruction": "Show orders for books placed this year.",
+  "output": "orders find --category books --when this-year"
+ },
+ {
+  "instruction": "Summarize total orders placed this year with overdue status, electronics category, price minimum 784 dollars.",
+  "output": "orders total --status overdue --category electronics --min-amount 784 --when this-year"
+ },
+ {
+  "instruction": "Show orders for sports sorted newest first, 1 only.",
+  "output": "orders find --category sports --sort newest --limit 1"
+ },
+ {
+  "instruction": "total money of orders with status cancelled placed last week",
+  "output": "orders total --status cancelled --when last-week"
+ },
+ {
+  "instruction": "count orders; status overdue; customer Margaret",
+  "output": "orders count --status overdue --customer Margaret"
+ },
+ {
+  "instruction": "Show orders with status: unpaid.",
+  "output": "orders find --status unpaid"
+ },
+ {
+  "instruction": "Find orders with status 'cancelled', category 'home', placed in '2020', and calculate their total.",
+  "output": "orders total --status cancelled --category home --year 2020"
+ },
+ {
+  "instruction": "show me orders for home category sorted by highest order price first",
+  "output": "orders find --category home --sort highest"
+ },
+ {
+  "instruction": "Find orders created today with status unpaid.",
+  "output": "orders find --status unpaid --when today"
+ },
+ {
+  "instruction": "Can you cancel this order?",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Could you perhaps tell me more about the Renaissance period? It always fascinates me.",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Please ship order #123456 to the customer.",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Can you tell me more about ancient Egypt? Small talk never hurts.",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "watcha order ship it plz",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Hey check and cancel all overdue orderspls",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Hey! Just curious, what's the origin story behind the Eiffel Tower? Let's chat!",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Can you ship order #12345 to the customer?",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Could you tell me more about the origins of salsa music? It's such an exciting rhythm!",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Could you recommend a good recipe for apple pie? I'm planning a winter dinner.",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Could you tell me about the earliest known human civilization in Europe? I've been curious about that.",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Could you tell me more about the pyramids in Egypt?",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "Could you please ship order #12345 to the address provided by the customer?",
+  "output": "orders unknown"
+ }
+]

@@ -1,0 +1,3908 @@
+[
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "list the sizes of a directory and any subdirectories, in human-readable form (i.e. auto-selecting the appropriate unit for each size): data",
+    "prompt": "du --human-readable",
+    "expected": [
+      " data"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "how do I start/Stop/Restart/Reload/Show the status of a service?: unit",
+    "prompt": "systemctl",
+    "expected": [
+      " status"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "locate source of gcc and man pages for Git: gcc git",
+    "prompt": "whereis -s",
+    "expected": [
+      " gcc"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "list the contents of the archive logs.tar.bz2",
+    "prompt": "tar -tf",
+    "expected": [
+      " logs.tar.bz2"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "extract all files/directories from specific archives into the current directory: 192.168.1.20 web-01",
+    "prompt": "unzip",
+    "expected": [
+      " 192.168.1.20"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with whereis, locate binary, source, and man pages for SSH: ssh",
+    "prompt": "whereis",
+    "expected": [
+      " ssh"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with pkill, kill all processes which match their full command instead of just the process name: build",
+    "prompt": "pkill -f",
+    "expected": [
+      " build"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "output char and line number of the first difference between two files: backup.sh image.md",
+    "prompt": "cmp",
+    "expected": [
+      " backup.sh"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with scp, recursively copy the contents of a directory from a remote host to a local directory: 10.0.0.5 data src",
+    "prompt": "scp -r 10.0.0.5:data",
+    "expected": [
+      " src"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with which, if there are multiple executables which match, display all: executable",
+    "prompt": "which --all",
+    "expected": [
+      " executable"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with realpath, disable symlink expansion: build",
+    "prompt": "realpath -s",
+    "expected": [
+      " build"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "do not overwrite existing files at the target: logs.conf data.py",
+    "prompt": "mv -n",
+    "expected": [
+      " logs.conf"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "fetch example.com into the file config.yml",
+    "prompt": "wget -O",
+    "expected": [
+      " config.yml"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "run a program. Often used in scripts after the shebang (#!) for looking up the path to the program: program",
+    "prompt": "env",
+    "expected": [
+      " program"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "print readme.md without its header line",
+    "prompt": "awk 'NR>1'",
+    "expected": [
+      " readme.md"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with tar, create a gzipped archive and write it to a file: backup.csv tmp.sh backup.txt",
+    "prompt": "tar czf",
+    "expected": [
+      " backup.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "send a request with an extra header, using a custom HTTP method and over a proxy (such as BurpSuite), ignoring insecure self-signed certificates: http://127.0.0.1:8080 Authorization: Bearer token https://example.com",
+    "prompt": "curl -k --proxy",
+    "expected": [
+      " http://127.0.0.1:8080"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "print directories within the tree hierarchy, using the wildcard (`glob`) pattern, and pruning out directories that aren't ancestors of the wanted one: /var/log",
+    "prompt": "tree -P",
+    "expected": [
+      " /var/log"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "remove the folder src recursively",
+    "prompt": "rm -r",
+    "expected": [
+      " src"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "count the length of the longest line in number of characters: report.png",
+    "prompt": "wc -L",
+    "expected": [
+      " report.png"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "download 10.0.0.5 and save it as readme.md",
+    "prompt": "wget -O",
+    "expected": [
+      " readme.md"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "copy index.html to data.csv",
+    "prompt": "cp",
+    "expected": [
+      " index.html"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "show only the duplicate lines of data.csv",
+    "prompt": "uniq -d",
+    "expected": [
+      " data.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "print repeated lines from error.log",
+    "prompt": "uniq -d",
+    "expected": [
+      " error.log"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "print script.sh without the lines matching timeout",
+    "prompt": "sed '/timeout/d'",
+    "expected": [
+      " script.sh"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "recursively make logs 755",
+    "prompt": "chmod -R",
+    "expected": [
+      " 755"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "find user in server.log with 10 lines of trailing context",
+    "prompt": "grep -A 10",
+    "expected": [
+      " user"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "extract column 10 of the csv main.py",
+    "prompt": "cut -d, -f 10",
+    "expected": [
+      " main.py"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "how do I create a symbolic link to a file or directory?: data https://github.com/company/tools.git",
+    "prompt": "ln --symbolic /data",
+    "expected": [
+      " https://github.com/company/tools.git"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "duplicate users.csv as todo.txt",
+    "prompt": "cp",
+    "expected": [
+      " users.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "how do I remove specific files and directories recursively?: src ~/projects",
+    "prompt": "rm -r",
+    "expected": [
+      " src"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "create directories with specific permissions: rwxrw-r-- data data",
+    "prompt": "mkdir --mode",
+    "expected": [
+      " rwxrw-r--"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "how do I force kill a process?: backup",
+    "prompt": "killall -SIGKILL",
+    "expected": [
+      " backup"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "open the man page for a command in a browser (`=browser_name` can be omitted if `$BROWSER` is set): archive command",
+    "prompt": "man --html=archive",
+    "expected": [
+      " command"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "sort config.yml numerically",
+    "prompt": "sort -n",
+    "expected": [
+      " config.yml"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with diff, compare files, ignoring white spaces: backup.csv data.pdf",
+    "prompt": "diff --ignore-all-space",
+    "expected": [
+      " backup.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "how do I run a command as another user and/or group?: carol dev cache",
+    "prompt": "sudo --user",
+    "expected": [
+      " carol"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "how do I send form-encoded data (POST request of type `application/x-www-form-urlencoded`). Use `--data @file_name` or `--data @'-'` to read from `stdin`?: tmp http://example.com/form",
+    "prompt": "curl -X",
+    "expected": [
+      " POST"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "print the top 100 lines of config.yml",
+    "prompt": "head -n",
+    "expected": [
+      " 100"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "sort the lines of users.csv",
+    "prompt": "sort",
+    "expected": [
+      " users.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "order the lines of todo.txt by number",
+    "prompt": "sort -n",
+    "expected": [
+      " todo.txt"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "replace error with localhost in notes.md",
+    "prompt": "sed 's/error/localhost/g'",
+    "expected": [
+      " notes.md"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "copy app.js to build only if it is newer",
+    "prompt": "cp -u",
+    "expected": [
+      " app.js"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "how do I get the parent PID of a process?: build",
+    "prompt": "ps --format ppid= --pid",
+    "expected": [
+      " build"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with tar, create an archive and write it to a file: report.pdf build.csv archive.zip",
+    "prompt": "tar cf",
+    "expected": [
+      " report.pdf"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "transfer a file over SSH using a different port than the default (22) and show global progress: 22 db.internal tmp.tar.gz image.yml",
+    "prompt": "rsync --rsh 'ssh -p 22' --info=progress2 db.internal:tmp.tar.gz",
+    "expected": [
+      " image.yml"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "keep reading file until `<Ctrl c>`, even if the file is inaccessible: image.yml",
+    "prompt": "tail -F",
+    "expected": [
+      " image.yml"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "check the status of the python service",
+    "prompt": "systemctl",
+    "expected": [
+      " status"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "make a copy of users.csv called data.csv",
+    "prompt": "cp",
+    "expected": [
+      " users.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "ssh to web-01 as deploy using the identity file backup.sql",
+    "prompt": "ssh -i",
+    "expected": [
+      " backup.sql"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "display properties about a specific file such as size, permissions, creation date, and access date among others: backup.tar.gz",
+    "prompt": "stat",
+    "expected": [
+      " backup.tar.gz"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with wc, count all lines in a file: tmp.md",
+    "prompt": "wc --lines",
+    "expected": [
+      " tmp.md"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "how do I list files opened by the given command or process?: backup",
+    "prompt": "lsof -c",
+    "expected": [
+      " backup"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "substitute every main by failed in config.yml and print the result",
+    "prompt": "sed 's/main/failed/g'",
+    "expected": [
+      " config.yml"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "signal the operating system to immediately terminate a program (which gets no chance to capture the signal): notes",
+    "prompt": "kill -KILL",
+    "expected": [
+      " notes"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "how do I list the contents of a compressed file?: archive.md",
+    "prompt": "gzip --list",
+    "expected": [
+      " archive.md"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "count the lines in users.csv",
+    "prompt": "wc -l",
+    "expected": [
+      " users.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with scp, use a specific username when connecting to the remote host: build.log backup web-01 /var/log",
+    "prompt": "scp",
+    "expected": [
+      " build.log"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "show the first 2 lines of notes.md",
+    "prompt": "head -n 2",
+    "expected": [
+      " notes.md"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "connect to 10.0.0.5 as www-data with the key index.html",
+    "prompt": "ssh -i",
+    "expected": [
+      " index.html"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "delete lines containing user from main.py",
+    "prompt": "sed '/user/d'",
+    "expected": [
+      " main.py"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "show 2 lines after each match of password in script.sh",
+    "prompt": "grep -A 2",
+    "expected": [
+      " password"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "update src with app.js only when changed",
+    "prompt": "cp -u",
+    "expected": [
+      " app.js"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "with kill, terminate a program using the SIGINT (interrupt) signal. This is typically initiated by the user pressing `<Ctrl c>`: image",
+    "prompt": "kill -INT",
+    "expected": [
+      " image"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "set the permissions of output.json to 644",
+    "prompt": "chmod",
+    "expected": [
+      " 644"
+    ]
+  },
+  {
+    "category": "Shell argument copy (seen intent)",
+    "instruction": "compress config.yml but keep the original",
+    "prompt": "gzip -k",
+    "expected": [
+      " config.yml"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "calculate the parent directory of a given path: ~/projects",
+    "prompt": "dirname",
+    "expected": [
+      " ~/projects"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "how do I archive files/directories to a multi-part split Zip archive (e.g. 3 GB parts)?: 3g 192.168.1.20 build /tmp/work",
+    "prompt": "zip --recurse-paths --split-size 3g",
+    "expected": [
+      " 192.168.1.20"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "put server.log and users.csv in a zip file called backup.tar.gz",
+    "prompt": "zip",
+    "expected": [
+      " backup.tar.gz"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "read the journal entries for java",
+    "prompt": "journalctl -u",
+    "expected": [
+      " java"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "print report.txt starting from line 10",
+    "prompt": "tail -n +10",
+    "expected": [
+      " report.txt"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "read the journal entries for node",
+    "prompt": "journalctl -u",
+    "expected": [
+      " node"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "how do I compare files but output nothing, yield only the exit status?: session.csv build.log",
+    "prompt": "cmp --quiet",
+    "expected": [
+      " session.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "rename backup.sql to todo.txt, asking before overwriting",
+    "prompt": "mv -i",
+    "expected": [
+      " backup.sql"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "where is the python command?",
+    "prompt": "which",
+    "expected": [
+      " python"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "print the first column of readme.md",
+    "prompt": "awk '{print $1}'",
+    "expected": [
+      " readme.md"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "with du, list the sizes of a directory and any subdirectories, in the given unit (B/KiB/MiB): /var/log",
+    "prompt": "du -m",
+    "expected": [
+      " /var/log"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "show last 10 lines of multiple files: image.png archive.yml",
+    "prompt": "tail",
+    "expected": [
+      " image.png"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "calculate the parent directory of a given path: data",
+    "prompt": "dirname",
+    "expected": [
+      " data"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "set the file access or modification times to the current one and don't create file if it doesn't exist: session.csv data.txt",
+    "prompt": "touch --no-create -a",
+    "expected": [
+      " session.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "search server.log for TODO",
+    "prompt": "grep",
+    "expected": [
+      " TODO"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "read the journal entries for python",
+    "prompt": "journalctl -u",
+    "expected": [
+      " python"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "unzip project.zip",
+    "prompt": "unzip",
+    "expected": [
+      " project.zip"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "how do I give the user rights to read and write to a file/directory?: /tmp/work",
+    "prompt": "chmod u+rw",
+    "expected": [
+      " /tmp/work"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "create a gzipped tar archive site.tar.gz of /etc",
+    "prompt": "tar -czf",
+    "expected": [
+      " site.tar.gz"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "how do I set the file access or modification times to the current one and don't create file if it doesn't exist?: notes.conf backup.sh",
+    "prompt": "touch --no-create -a",
+    "expected": [
+      " notes.conf"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "create an empty file called notes.md",
+    "prompt": "touch",
+    "expected": [
+      " notes.md"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "how do I calculate the parent directory of a given path?: /var/log",
+    "prompt": "dirname",
+    "expected": [
+      " /var/log"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "add files/directories to a specific archive: localhost src ~/projects",
+    "prompt": "zip --recurse-paths",
+    "expected": [
+      " localhost"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "with touch, set the file access or modification times to the current one and don't create file if it doesn't exist: backup.zip backup.py",
+    "prompt": "touch --no-create -a",
+    "expected": [
+      " backup.zip"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "add files/directories to a specific archive: 192.168.1.20 /var/log /var/log",
+    "prompt": "zip --recurse-paths",
+    "expected": [
+      " 192.168.1.20"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "create a patch file for Git from the differences of two text files, treating nonexistent files as empty: cache.yml notes.pdf notes.py",
+    "prompt": "diff --text --unified --new-file",
+    "expected": [
+      " cache.yml"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "with systemctl, enable/Disable a unit to be started on bootup: unit",
+    "prompt": "systemctl disable",
+    "expected": [
+      " unit"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "add files/directories to a specific archive: web-01 build docs",
+    "prompt": "zip --recurse-paths",
+    "expected": [
+      " web-01"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "make a .tar.gz of /home/alice called project.zip",
+    "prompt": "tar -czf",
+    "expected": [
+      " project.zip"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "print a file from a specific line number: 3 report.csv",
+    "prompt": "tail -n +3",
+    "expected": [
+      " report.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "write failed into the file config.yml",
+    "prompt": "echo",
+    "expected": [
+      " failed"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "page through backup.sql",
+    "prompt": "less",
+    "expected": [
+      " backup.sql"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "print the first column of main.py",
+    "prompt": "awk '{print $1}'",
+    "expected": [
+      " main.py"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "change the owner of backup.sql to alice",
+    "prompt": "chown",
+    "expected": [
+      " alice"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "with cmp, compare files but output nothing, yield only the exit status: backup.tar.gz tmp.png",
+    "prompt": "cmp --quiet",
+    "expected": [
+      " backup.tar.gz"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "put index.html and app.js in a zip file called data.tgz",
+    "prompt": "zip",
+    "expected": [
+      " data.tgz"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "how many lines of script.sh contain user?",
+    "prompt": "grep -c",
+    "expected": [
+      " user"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "how do I enable/Disable a unit to be started on bootup?: unit",
+    "prompt": "systemctl disable",
+    "expected": [
+      " unit"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "print the first 5 characters of app.js",
+    "prompt": "head -c 5",
+    "expected": [
+      " app.js"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "add files/directories to a specific archive: 10.0.0.5 data docs",
+    "prompt": "zip --recurse-paths",
+    "expected": [
+      " 10.0.0.5"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "print the fifth to tenth character of each line of the specified file: cache.pdf",
+    "prompt": "cut --characters 5-10",
+    "expected": [
+      " cache.pdf"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "recursively grep user in /tmp/work limited to .txt files",
+    "prompt": "grep --include=*.txt -r",
+    "expected": [
+      " user"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "recursively grep timeout in ~/downloads limited to .py files",
+    "prompt": "grep --include=*.py -r",
+    "expected": [
+      " timeout"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "open todo.txt in a pager",
+    "prompt": "less",
+    "expected": [
+      " todo.txt"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "how do I interactively ask for confirmation before termination?: tmp",
+    "prompt": "killall --interactive",
+    "expected": [
+      " tmp"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "terminate a process using the default SIGTERM (terminate) signal: data",
+    "prompt": "killall",
+    "expected": [
+      " data"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "with killall, terminate a process using the default SIGTERM (terminate) signal: session",
+    "prompt": "killall",
+    "expected": [
+      " session"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "search my command history for error",
+    "prompt": "history | grep",
+    "expected": [
+      " error"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "count the words in error.log",
+    "prompt": "wc -w",
+    "expected": [
+      " error.log"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "with chmod, give the user rights to read and write to a file/directory: /var/log",
+    "prompt": "chmod u+rw",
+    "expected": [
+      " /var/log"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "sort app.js by column 5",
+    "prompt": "sort -k 5",
+    "expected": [
+      " app.js"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "move index.html to main.py with confirmation",
+    "prompt": "mv -i",
+    "expected": [
+      " index.html"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "terminate a process using the default SIGTERM (terminate) signal: tmp",
+    "prompt": "killall",
+    "expected": [
+      " tmp"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "show the first 20 bytes of main.py",
+    "prompt": "head -c 20",
+    "expected": [
+      " main.py"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "match localhost as a complete word in script.sh",
+    "prompt": "grep -w",
+    "expected": [
+      " localhost"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "calculate the parent directory of a given path: build",
+    "prompt": "dirname",
+    "expected": [
+      " build"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "ping prod.example.org 3 times",
+    "prompt": "ping -c 3",
+    "expected": [
+      " prod.example.org"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "extract the zip file project.zip",
+    "prompt": "unzip",
+    "expected": [
+      " project.zip"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "print the fifth to tenth character of each line of the specified file: data.pdf",
+    "prompt": "cut --characters 5-10",
+    "expected": [
+      " data.pdf"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "with sort, sort `/etc/passwd` numerically by the 3rd field, and when items in the 3rd field are equal, sort by the 4th field by numbers with exponents",
+    "prompt": "sort --field-separator : -k 3,3n -k 4,4g",
+    "expected": [
+      " /etc/passwd"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "with ping, also display a message if no response was received: web-01",
+    "prompt": "ping -O",
+    "expected": [
+      " web-01"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "show the last 2 lines of users.csv",
+    "prompt": "tail -n 2",
+    "expected": [
+      " users.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "change ownership of config.yml to carol:carol",
+    "prompt": "chown",
+    "expected": [
+      " carol:carol"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "archive copy of /tmp/work to /etc",
+    "prompt": "cp -a",
+    "expected": [
+      " /tmp/work"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "search my command history for foo",
+    "prompt": "history | grep",
+    "expected": [
+      " foo"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "show last 10 lines of multiple files: notes.md cache.txt",
+    "prompt": "tail",
+    "expected": [
+      " notes.md"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "copy users.csv to todo.txt but ask before overwriting",
+    "prompt": "cp -i",
+    "expected": [
+      " users.csv"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "list the sizes of a directory and any subdirectories, in the given unit (B/KiB/MiB): docs",
+    "prompt": "du -m",
+    "expected": [
+      " docs"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "enable/Disable a unit to be started on bootup: unit",
+    "prompt": "systemctl disable",
+    "expected": [
+      " unit"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "make alice the owner of index.html",
+    "prompt": "chown",
+    "expected": [
+      " alice"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "set the file access or modification times to the current one and don't create file if it doesn't exist: config.yml data.py",
+    "prompt": "touch --no-create -a",
+    "expected": [
+      " config.yml"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "show the path of the java executable",
+    "prompt": "which",
+    "expected": [
+      " java"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "unzip site.tar.gz",
+    "prompt": "unzip",
+    "expected": [
+      " site.tar.gz"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "set data.csv to 600",
+    "prompt": "chmod",
+    "expected": [
+      " 600"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "output the text TODO",
+    "prompt": "echo",
+    "expected": [
+      " TODO"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "give all users rights to read and execute: archive.sh",
+    "prompt": "chmod a+rx",
+    "expected": [
+      " archive.sh"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "show the path of the python executable",
+    "prompt": "which",
+    "expected": [
+      " python"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "rename app.js to config.yml, asking before overwriting",
+    "prompt": "mv -i",
+    "expected": [
+      " app.js"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "make admin the owner of main.py",
+    "prompt": "chown",
+    "expected": [
+      " admin"
+    ]
+  },
+  {
+    "category": "Shell argument copy (unseen intent)",
+    "instruction": "with zip, add files/directories to a specific archive: server1 src docs",
+    "prompt": "zip --recurse-paths",
+    "expected": [
+      " server1"
+    ]
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I print system hostname?",
+    "prompt": "",
+    "expected": [
+      "uname -n"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "list the sizes of a directory and any subdirectories, in human-readable form (i.e. auto-selecting the appropriate unit for each size): data",
+    "prompt": "",
+    "expected": [
+      "du --human-readable data"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I print hidden files too with colorization on?",
+    "prompt": "",
+    "expected": [
+      "tree -a -C"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "display memory in human-readable units",
+    "prompt": "",
+    "expected": [
+      "free --human"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I show the latest `n` lines and follow new messages (like `tail --follow` for traditional syslog)?: n",
+    "prompt": "",
+    "expected": [
+      "journalctl -n n --follow"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I start/Stop/Restart/Reload/Show the status of a service?: unit",
+    "prompt": "",
+    "expected": [
+      "systemctl status unit"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "list all files and directories (including hidden ones) above a certain threshold size (useful for investigating what is actually taking up the space)",
+    "prompt": "",
+    "expected": [
+      "du -ah --threshold 1048576K .[^.]* *"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with tree, print directories only",
+    "prompt": "",
+    "expected": [
+      "tree -d"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I overwrite history file with history of current Bash shell (often combined with `history -c` to purge history)?",
+    "prompt": "",
+    "expected": [
+      "history -w"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "generate a key interactively",
+    "prompt": "",
+    "expected": [
+      "ssh-keygen"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "locate source of gcc and man pages for Git: gcc git",
+    "prompt": "",
+    "expected": [
+      "whereis -s gcc -m git"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "list the contents of the archive logs.tar.bz2",
+    "prompt": "",
+    "expected": [
+      "tar -tf logs.tar.bz2"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I turn `rm` into an interactive command?",
+    "prompt": "",
+    "expected": [
+      "alias rm=\"rm --interactive\""
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "extract all files/directories from specific archives into the current directory: 192.168.1.20 web-01",
+    "prompt": "",
+    "expected": [
+      "unzip 192.168.1.20 web-01"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with whereis, locate binary, source, and man pages for SSH: ssh",
+    "prompt": "",
+    "expected": [
+      "whereis ssh"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with pkill, kill all processes which match their full command instead of just the process name: build",
+    "prompt": "",
+    "expected": [
+      "pkill -f \"build\""
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I list routes and do not resolve IP addresses to hostnames?",
+    "prompt": "",
+    "expected": [
+      "netstat --route --numeric"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with ss, show all TCP/UDP/RAW/UNIX sockets",
+    "prompt": "",
+    "expected": [
+      "ss --all --tcp"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "output char and line number of the first difference between two files: backup.sh image.md",
+    "prompt": "",
+    "expected": [
+      "cmp backup.sh image.md"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with id, display the current user identity",
+    "prompt": "",
+    "expected": [
+      "id --user --name"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I display all groups the current user belongs to?",
+    "prompt": "",
+    "expected": [
+      "id --groups --name"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with scp, recursively copy the contents of a directory from a remote host to a local directory: 10.0.0.5 data src",
+    "prompt": "",
+    "expected": [
+      "scp -r 10.0.0.5:data src"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I display version?",
+    "prompt": "",
+    "expected": [
+      "uptime -V"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with which, if there are multiple executables which match, display all: executable",
+    "prompt": "",
+    "expected": [
+      "which --all executable"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with realpath, disable symlink expansion: build",
+    "prompt": "",
+    "expected": [
+      "realpath -s build"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "display all filesystems and their disk usage (using 512-byte units)",
+    "prompt": "",
+    "expected": [
+      "df"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "connect to a remote server: backup 10.0.0.5",
+    "prompt": "",
+    "expected": [
+      "ssh backup@10.0.0.5"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "do not overwrite existing files at the target: logs.conf data.py",
+    "prompt": "",
+    "expected": [
+      "mv -n logs.conf data.py"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "fetch example.com into the file config.yml",
+    "prompt": "",
+    "expected": [
+      "wget -O config.yml example.com"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "run a program. Often used in scripts after the shebang (#!) for looking up the path to the program: program",
+    "prompt": "",
+    "expected": [
+      "env program"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "print readme.md without its header line",
+    "prompt": "",
+    "expected": [
+      "awk 'NR>1' readme.md"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with tar, create a gzipped archive and write it to a file: backup.csv tmp.sh backup.txt",
+    "prompt": "",
+    "expected": [
+      "tar czf backup.csv tmp.sh backup.txt"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with id, display the current user identity as a number",
+    "prompt": "",
+    "expected": [
+      "id --user"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with pwd, display help",
+    "prompt": "",
+    "expected": [
+      "pwd --help"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "which files changed within 50 days?",
+    "prompt": "",
+    "expected": [
+      "find . -mtime -50"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I list existing cron jobs for the current user?",
+    "prompt": "",
+    "expected": [
+      "crontab -l"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "send a request with an extra header, using a custom HTTP method and over a proxy (such as BurpSuite), ignoring insecure self-signed certificates: http://127.0.0.1:8080 Authorization: Bearer token https://example.com",
+    "prompt": "",
+    "expected": [
+      "curl -k --proxy http://127.0.0.1:8080 -H 'Authorization: Bearer token' -X ... https://example.com"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "print directories within the tree hierarchy, using the wildcard (`glob`) pattern, and pruning out directories that aren't ancestors of the wanted one: /var/log",
+    "prompt": "",
+    "expected": [
+      "tree -P /var/log --matchdirs --prune"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "remove the folder src recursively",
+    "prompt": "",
+    "expected": [
+      "rm -r src"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "count the length of the longest line in number of characters: report.png",
+    "prompt": "",
+    "expected": [
+      "wc -L report.png"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "download 10.0.0.5 and save it as readme.md",
+    "prompt": "",
+    "expected": [
+      "wget -O readme.md 10.0.0.5"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "copy index.html to data.csv",
+    "prompt": "",
+    "expected": [
+      "cp index.html data.csv"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "show only the duplicate lines of data.csv",
+    "prompt": "",
+    "expected": [
+      "uniq -d data.csv"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "print repeated lines from error.log",
+    "prompt": "",
+    "expected": [
+      "uniq -d error.log"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "show all messages by a specific process: cache",
+    "prompt": "",
+    "expected": [
+      "journalctl _PID=cache"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I do not show any idle or zombie processes?",
+    "prompt": "",
+    "expected": [
+      "top --idle-toggle"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I display current user's ID (UID), group ID (GID), and groups to which they belong?",
+    "prompt": "",
+    "expected": [
+      "id"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "print script.sh without the lines matching timeout",
+    "prompt": "",
+    "expected": [
+      "sed '/timeout/d' script.sh"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "recursively make logs 755",
+    "prompt": "",
+    "expected": [
+      "chmod -R 755 logs"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "find user in server.log with 10 lines of trailing context",
+    "prompt": "",
+    "expected": [
+      "grep -A 10 user server.log"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "extract column 10 of the csv main.py",
+    "prompt": "",
+    "expected": [
+      "cut -d, -f 10 main.py"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I go to the root directory?",
+    "prompt": "",
+    "expected": [
+      "cd /"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "display the time data in seconds",
+    "prompt": "",
+    "expected": [
+      "uptime --raw"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I create a symbolic link to a file or directory?: data https://github.com/company/tools.git",
+    "prompt": "",
+    "expected": [
+      "ln --symbolic /data https://github.com/company/tools.git"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "duplicate users.csv as todo.txt",
+    "prompt": "",
+    "expected": [
+      "cp users.csv todo.txt"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I remove specific files and directories recursively?: src ~/projects",
+    "prompt": "",
+    "expected": [
+      "rm -r src ~/projects"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "create directories with specific permissions: rwxrw-r-- data data",
+    "prompt": "",
+    "expected": [
+      "mkdir --mode rwxrw-r-- data data"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I force kill a process?: backup",
+    "prompt": "",
+    "expected": [
+      "killall -SIGKILL backup"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "open the man page for a command in a browser (`=browser_name` can be omitted if `$BROWSER` is set): archive command",
+    "prompt": "",
+    "expected": [
+      "man --html=archive command"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "sort config.yml numerically",
+    "prompt": "",
+    "expected": [
+      "sort -n config.yml"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with diff, compare files, ignoring white spaces: backup.csv data.pdf",
+    "prompt": "",
+    "expected": [
+      "diff --ignore-all-space backup.csv data.pdf"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I run a command as another user and/or group?: carol dev cache",
+    "prompt": "",
+    "expected": [
+      "sudo --user carol --group dev cache"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I send form-encoded data (POST request of type `application/x-www-form-urlencoded`). Use `--data @file_name` or `--data @'-'` to read from `stdin`?: tmp http://example.com/form",
+    "prompt": "",
+    "expected": [
+      "curl -X POST -d 'tmp' http://example.com/form"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "print the top 100 lines of config.yml",
+    "prompt": "",
+    "expected": [
+      "head -n 100 config.yml"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "sort the lines of users.csv",
+    "prompt": "",
+    "expected": [
+      "sort users.csv"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "order the lines of todo.txt by number",
+    "prompt": "",
+    "expected": [
+      "sort -n todo.txt"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "replace error with localhost in notes.md",
+    "prompt": "",
+    "expected": [
+      "sed 's/error/localhost/g' notes.md"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "copy app.js to build only if it is newer",
+    "prompt": "",
+    "expected": [
+      "cp -u app.js build"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I get the parent PID of a process?: build",
+    "prompt": "",
+    "expected": [
+      "ps --format ppid= --pid build"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with tar, create an archive and write it to a file: report.pdf build.csv archive.zip",
+    "prompt": "",
+    "expected": [
+      "tar cf report.pdf build.csv archive.zip"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "transfer a file over SSH using a different port than the default (22) and show global progress: 22 db.internal tmp.tar.gz image.yml",
+    "prompt": "",
+    "expected": [
+      "rsync --rsh 'ssh -p 22' --info=progress2 db.internal:tmp.tar.gz image.yml"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "keep reading file until `<Ctrl c>`, even if the file is inaccessible: image.yml",
+    "prompt": "",
+    "expected": [
+      "tail -F image.yml"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "check the status of the python service",
+    "prompt": "",
+    "expected": [
+      "systemctl status python"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "make a copy of users.csv called data.csv",
+    "prompt": "",
+    "expected": [
+      "cp users.csv data.csv"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "ssh to web-01 as deploy using the identity file backup.sql",
+    "prompt": "",
+    "expected": [
+      "ssh -i backup.sql deploy@web-01"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "display properties about a specific file such as size, permissions, creation date, and access date among others: backup.tar.gz",
+    "prompt": "",
+    "expected": [
+      "stat backup.tar.gz"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with wc, count all lines in a file: tmp.md",
+    "prompt": "",
+    "expected": [
+      "wc --lines tmp.md"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "how do I list files opened by the given command or process?: backup",
+    "prompt": "",
+    "expected": [
+      "lsof -c backup"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "substitute every main by failed in config.yml and print the result",
+    "prompt": "",
+    "expected": [
+      "sed 's/main/failed/g' config.yml"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (seen intent)",
+    "instruction": "with locate, look for a file by its exact filename (a pattern containing no globbing characters is interpreted as `*pattern*`): build.py",
+    "prompt": "",
+    "expected": [
+      "locate \"*/build.py\""
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "calculate the parent directory of a given path: ~/projects",
+    "prompt": "",
+    "expected": [
+      "dirname ~/projects"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "with ss, show all TCP sockets listening on the local 8080 port",
+    "prompt": "",
+    "expected": [
+      "ss -lt src :8080"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I archive files/directories to a multi-part split Zip archive (e.g. 3 GB parts)?: 3g 192.168.1.20 build /tmp/work",
+    "prompt": "",
+    "expected": [
+      "zip --recurse-paths --split-size 3g 192.168.1.20 build /tmp/work"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "run wc -l on every .py file found",
+    "prompt": "",
+    "expected": [
+      "find . -name '*.py' -exec wc -l {} +"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "show all TCP sockets listening on the local 8080 port",
+    "prompt": "",
+    "expected": [
+      "ss -lt src :8080"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "put server.log and users.csv in a zip file called backup.tar.gz",
+    "prompt": "",
+    "expected": [
+      "zip backup.tar.gz server.log users.csv"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "read the journal entries for java",
+    "prompt": "",
+    "expected": [
+      "journalctl -u java"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "go to the previously chosen directory",
+    "prompt": "",
+    "expected": [
+      "cd -"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "print report.txt starting from line 10",
+    "prompt": "",
+    "expected": [
+      "tail -n +10 report.txt"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "read the journal entries for node",
+    "prompt": "",
+    "expected": [
+      "journalctl -u node"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I compare files but output nothing, yield only the exit status?: session.csv build.log",
+    "prompt": "",
+    "expected": [
+      "cmp --quiet session.csv build.log"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "copy a file between two remote hosts transferring through the local host: localhost tmp.tar.gz localhost src",
+    "prompt": "",
+    "expected": [
+      "scp -3 localhost:tmp.tar.gz localhost:src"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "rename backup.sql to todo.txt, asking before overwriting",
+    "prompt": "",
+    "expected": [
+      "mv -i backup.sql todo.txt"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "where is the python command?",
+    "prompt": "",
+    "expected": [
+      "which python"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "print the first column of readme.md",
+    "prompt": "",
+    "expected": [
+      "awk '{print $1}' readme.md"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "with du, list the sizes of a directory and any subdirectories, in the given unit (B/KiB/MiB): /var/log",
+    "prompt": "",
+    "expected": [
+      "du -m /var/log"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "with uname, print kernel name",
+    "prompt": "",
+    "expected": [
+      "uname"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "show last 10 lines of multiple files: image.png archive.yml",
+    "prompt": "",
+    "expected": [
+      "tail image.png archive.yml"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "send a `SIGUSR1` signal to all processes with the given GID (group id): admin",
+    "prompt": "",
+    "expected": [
+      "kill -SIGUSR1 -admin"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "calculate the parent directory of a given path: data",
+    "prompt": "",
+    "expected": [
+      "dirname data"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "set the file access or modification times to the current one and don't create file if it doesn't exist: session.csv data.txt",
+    "prompt": "",
+    "expected": [
+      "touch --no-create -a session.csv data.txt"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "search server.log for TODO",
+    "prompt": "",
+    "expected": [
+      "grep TODO server.log"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "read the journal entries for python",
+    "prompt": "",
+    "expected": [
+      "journalctl -u python"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "unzip project.zip",
+    "prompt": "",
+    "expected": [
+      "unzip project.zip"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I give the user rights to read and write to a file/directory?: /tmp/work",
+    "prompt": "",
+    "expected": [
+      "chmod u+rw /tmp/work"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "with sudo, list the allowed (and forbidden) commands for the invoking user in longer format",
+    "prompt": "",
+    "expected": [
+      "sudo --list --list"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "create a gzipped tar archive site.tar.gz of /etc",
+    "prompt": "",
+    "expected": [
+      "tar -czf site.tar.gz /etc"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I set the file access or modification times to the current one and don't create file if it doesn't exist?: notes.conf backup.sh",
+    "prompt": "",
+    "expected": [
+      "touch --no-create -a notes.conf backup.sh"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I print the current operating system name?",
+    "prompt": "",
+    "expected": [
+      "uname --operating-system"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I clear the commands history list?",
+    "prompt": "",
+    "expected": [
+      "history -c"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "create an empty file called notes.md",
+    "prompt": "",
+    "expected": [
+      "touch notes.md"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I go to the previously chosen directory?",
+    "prompt": "",
+    "expected": [
+      "cd -"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I calculate the parent directory of a given path?: /var/log",
+    "prompt": "",
+    "expected": [
+      "dirname /var/log"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "add files/directories to a specific archive: localhost src ~/projects",
+    "prompt": "",
+    "expected": [
+      "zip --recurse-paths localhost src ~/projects"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "with touch, set the file access or modification times to the current one and don't create file if it doesn't exist: backup.zip backup.py",
+    "prompt": "",
+    "expected": [
+      "touch --no-create -a backup.zip backup.py"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "add files/directories to a specific archive: 192.168.1.20 /var/log /var/log",
+    "prompt": "",
+    "expected": [
+      "zip --recurse-paths 192.168.1.20 /var/log /var/log"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "list the allowed (and forbidden) commands for the invoking user in longer format",
+    "prompt": "",
+    "expected": [
+      "sudo --list --list"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "create a patch file for Git from the differences of two text files, treating nonexistent files as empty: cache.yml notes.pdf notes.py",
+    "prompt": "",
+    "expected": [
+      "diff --text --unified --new-file cache.yml notes.pdf > notes.py"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "with ssh, sSH Jumping: Connect through a jumphost to a remote server (Multiple jump hops may be specified separated by comma characters): bob server1 carol server1",
+    "prompt": "",
+    "expected": [
+      "ssh bob@server1 -J carol@server1"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "with systemctl, enable/Disable a unit to be started on bootup: unit",
+    "prompt": "",
+    "expected": [
+      "systemctl disable unit"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "add files/directories to a specific archive: web-01 build docs",
+    "prompt": "",
+    "expected": [
+      "zip --recurse-paths web-01 build docs"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "make a .tar.gz of /home/alice called project.zip",
+    "prompt": "",
+    "expected": [
+      "tar -czf project.zip /home/alice"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "sSH Jumping: Connect through a jumphost to a remote server (Multiple jump hops may be specified separated by comma characters): deploy localhost bob 192.168.1.20",
+    "prompt": "",
+    "expected": [
+      "ssh deploy@localhost -J bob@192.168.1.20"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "print a file from a specific line number: 3 report.csv",
+    "prompt": "",
+    "expected": [
+      "tail -n +3 report.csv"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I display the commands history list with line numbers?",
+    "prompt": "",
+    "expected": [
+      "history"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "write failed into the file config.yml",
+    "prompt": "",
+    "expected": [
+      "echo failed > config.yml"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "page through backup.sql",
+    "prompt": "",
+    "expected": [
+      "less backup.sql"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "copy a file between two remote hosts transferring through the local host: server1 session.conf 192.168.1.20 build",
+    "prompt": "",
+    "expected": [
+      "scp -3 server1:session.conf 192.168.1.20:build"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "print the first column of main.py",
+    "prompt": "",
+    "expected": [
+      "awk '{print $1}' main.py"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "find only folders in this tree",
+    "prompt": "",
+    "expected": [
+      "find . -type d"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "change the owner of backup.sql to alice",
+    "prompt": "",
+    "expected": [
+      "chown alice backup.sql"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "with cmp, compare files but output nothing, yield only the exit status: backup.tar.gz tmp.png",
+    "prompt": "",
+    "expected": [
+      "cmp --quiet backup.tar.gz tmp.png"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "put index.html and app.js in a zip file called data.tgz",
+    "prompt": "",
+    "expected": [
+      "zip data.tgz index.html app.js"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "delay in seconds: 1",
+    "prompt": "",
+    "expected": [
+      "sleep 1"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how many lines of script.sh contain user?",
+    "prompt": "",
+    "expected": [
+      "grep -c user script.sh"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I send a `SIGUSR1` signal to all processes with the given GID (group id)?: deploy",
+    "prompt": "",
+    "expected": [
+      "kill -SIGUSR1 -deploy"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "launch the default shell with superuser privileges and run login-specific files (`.profile`, `.bash_profile`, etc.)",
+    "prompt": "",
+    "expected": [
+      "sudo -i"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I enable/Disable a unit to be started on bootup?: unit",
+    "prompt": "",
+    "expected": [
+      "systemctl disable unit"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "print the first 5 characters of app.js",
+    "prompt": "",
+    "expected": [
+      "head -c 5 app.js"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "add files/directories to a specific archive: 10.0.0.5 data docs",
+    "prompt": "",
+    "expected": [
+      "zip --recurse-paths 10.0.0.5 data docs"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "list all directories below here",
+    "prompt": "",
+    "expected": [
+      "find . -type d"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "list all regular files below here",
+    "prompt": "",
+    "expected": [
+      "find . -type f"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "print the fifth to tenth character of each line of the specified file: cache.pdf",
+    "prompt": "",
+    "expected": [
+      "cut --characters 5-10 cache.pdf"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "recursively grep user in /tmp/work limited to .txt files",
+    "prompt": "",
+    "expected": [
+      "grep --include=*.txt -r user /tmp/work"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "recursively grep timeout in ~/downloads limited to .py files",
+    "prompt": "",
+    "expected": [
+      "grep --include=*.py -r timeout ~/downloads"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "open todo.txt in a pager",
+    "prompt": "",
+    "expected": [
+      "less todo.txt"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I interactively ask for confirmation before termination?: tmp",
+    "prompt": "",
+    "expected": [
+      "killall --interactive tmp"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "terminate a process using the default SIGTERM (terminate) signal: data",
+    "prompt": "",
+    "expected": [
+      "killall data"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "print the kernel name and version",
+    "prompt": "",
+    "expected": [
+      "uname -a"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "with killall, terminate a process using the default SIGTERM (terminate) signal: session",
+    "prompt": "",
+    "expected": [
+      "killall session"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "search my command history for error",
+    "prompt": "",
+    "expected": [
+      "history | grep error"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "count the words in error.log",
+    "prompt": "",
+    "expected": [
+      "wc -w error.log"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "with chmod, give the user rights to read and write to a file/directory: /var/log",
+    "prompt": "",
+    "expected": [
+      "chmod u+rw /var/log"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "print the current operating system name",
+    "prompt": "",
+    "expected": [
+      "uname --operating-system"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I copy a file between two remote hosts transferring through the local host?: example.com backup.png localhost data",
+    "prompt": "",
+    "expected": [
+      "scp -3 example.com:backup.png localhost:data"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "how do I delay in seconds?: 5",
+    "prompt": "",
+    "expected": [
+      "sleep 5"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "display the commands history list with line numbers",
+    "prompt": "",
+    "expected": [
+      "history"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "run wc -l on every .js file found",
+    "prompt": "",
+    "expected": [
+      "find . -name '*.js' -exec wc -l {} +"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "sort app.js by column 5",
+    "prompt": "",
+    "expected": [
+      "sort -k 5 app.js"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell full command (unseen intent)",
+    "instruction": "move index.html to main.py with confirmation",
+    "prompt": "",
+    "expected": [
+      "mv -i index.html main.py"
+    ],
+    "complete": true
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I print system hostname?",
+    "prompt": "uname",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "list the sizes of a directory and any subdirectories, in human-readable form (i.e. auto-selecting the appropriate unit for each size): data",
+    "prompt": "du",
+    "expected": [
+      " --human-readable"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I print hidden files too with colorization on?",
+    "prompt": "tree",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "display memory in human-readable units",
+    "prompt": "free",
+    "expected": [
+      " --human"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I show the latest `n` lines and follow new messages (like `tail --follow` for traditional syslog)?: n",
+    "prompt": "journalctl",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "list all files and directories (including hidden ones) above a certain threshold size (useful for investigating what is actually taking up the space)",
+    "prompt": "du",
+    "expected": [
+      " -ah"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with tree, print directories only",
+    "prompt": "tree",
+    "expected": [
+      " -d"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I overwrite history file with history of current Bash shell (often combined with `history -c` to purge history)?",
+    "prompt": "history",
+    "expected": [
+      " -w"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "locate source of gcc and man pages for Git: gcc git",
+    "prompt": "whereis",
+    "expected": [
+      " -s"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "list the contents of the archive logs.tar.bz2",
+    "prompt": "tar",
+    "expected": [
+      " -tf"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I turn `rm` into an interactive command?",
+    "prompt": "alias rm=\"rm",
+    "expected": [
+      " --interactive\""
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with pkill, kill all processes which match their full command instead of just the process name: build",
+    "prompt": "pkill",
+    "expected": [
+      " -f"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I list routes and do not resolve IP addresses to hostnames?",
+    "prompt": "netstat",
+    "expected": [
+      " --route"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with ss, show all TCP/UDP/RAW/UNIX sockets",
+    "prompt": "ss",
+    "expected": [
+      " --all"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with id, display the current user identity",
+    "prompt": "id",
+    "expected": [
+      " --user"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I display all groups the current user belongs to?",
+    "prompt": "id",
+    "expected": [
+      " --groups"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with scp, recursively copy the contents of a directory from a remote host to a local directory: 10.0.0.5 data src",
+    "prompt": "scp",
+    "expected": [
+      " -r"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I display version?",
+    "prompt": "uptime",
+    "expected": [
+      " -V"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with which, if there are multiple executables which match, display all: executable",
+    "prompt": "which",
+    "expected": [
+      " --all"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with realpath, disable symlink expansion: build",
+    "prompt": "realpath",
+    "expected": [
+      " -s"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "do not overwrite existing files at the target: logs.conf data.py",
+    "prompt": "mv",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "fetch example.com into the file config.yml",
+    "prompt": "wget",
+    "expected": [
+      " -O"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with id, display the current user identity as a number",
+    "prompt": "id",
+    "expected": [
+      " --user"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with pwd, display help",
+    "prompt": "pwd",
+    "expected": [
+      " --help"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "which files changed within 50 days?",
+    "prompt": "find .",
+    "expected": [
+      " -mtime"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I list existing cron jobs for the current user?",
+    "prompt": "crontab",
+    "expected": [
+      " -l"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "send a request with an extra header, using a custom HTTP method and over a proxy (such as BurpSuite), ignoring insecure self-signed certificates: http://127.0.0.1:8080 Authorization: Bearer token https://example.com",
+    "prompt": "curl",
+    "expected": [
+      " -k"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "print directories within the tree hierarchy, using the wildcard (`glob`) pattern, and pruning out directories that aren't ancestors of the wanted one: /var/log",
+    "prompt": "tree",
+    "expected": [
+      " -P"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "remove the folder src recursively",
+    "prompt": "rm",
+    "expected": [
+      " -r"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "count the length of the longest line in number of characters: report.png",
+    "prompt": "wc",
+    "expected": [
+      " -L"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "download 10.0.0.5 and save it as readme.md",
+    "prompt": "wget",
+    "expected": [
+      " -O"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "show only the duplicate lines of data.csv",
+    "prompt": "uniq",
+    "expected": [
+      " -d"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "print repeated lines from error.log",
+    "prompt": "uniq",
+    "expected": [
+      " -d"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I do not show any idle or zombie processes?",
+    "prompt": "top",
+    "expected": [
+      " --idle-toggle"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "recursively make logs 755",
+    "prompt": "chmod",
+    "expected": [
+      " -R"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "find user in server.log with 10 lines of trailing context",
+    "prompt": "grep",
+    "expected": [
+      " -A"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "extract column 10 of the csv main.py",
+    "prompt": "cut",
+    "expected": [
+      " -d,"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "display the time data in seconds",
+    "prompt": "uptime",
+    "expected": [
+      " --raw"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I create a symbolic link to a file or directory?: data https://github.com/company/tools.git",
+    "prompt": "ln",
+    "expected": [
+      " --symbolic"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I remove specific files and directories recursively?: src ~/projects",
+    "prompt": "rm",
+    "expected": [
+      " -r"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "create directories with specific permissions: rwxrw-r-- data data",
+    "prompt": "mkdir",
+    "expected": [
+      " --mode"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I force kill a process?: backup",
+    "prompt": "killall",
+    "expected": [
+      " -SIGKILL"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "open the man page for a command in a browser (`=browser_name` can be omitted if `$BROWSER` is set): archive command",
+    "prompt": "man",
+    "expected": [
+      " --html"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "sort config.yml numerically",
+    "prompt": "sort",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with diff, compare files, ignoring white spaces: backup.csv data.pdf",
+    "prompt": "diff",
+    "expected": [
+      " --ignore-all-space"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I run a command as another user and/or group?: carol dev cache",
+    "prompt": "sudo",
+    "expected": [
+      " --user"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I send form-encoded data (POST request of type `application/x-www-form-urlencoded`). Use `--data @file_name` or `--data @'-'` to read from `stdin`?: tmp http://example.com/form",
+    "prompt": "curl",
+    "expected": [
+      " -X"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "print the top 100 lines of config.yml",
+    "prompt": "head",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "order the lines of todo.txt by number",
+    "prompt": "sort",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "copy app.js to build only if it is newer",
+    "prompt": "cp",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I get the parent PID of a process?: build",
+    "prompt": "ps",
+    "expected": [
+      " --format"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "transfer a file over SSH using a different port than the default (22) and show global progress: 22 db.internal tmp.tar.gz image.yml",
+    "prompt": "rsync",
+    "expected": [
+      " --rsh"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "keep reading file until `<Ctrl c>`, even if the file is inaccessible: image.yml",
+    "prompt": "tail",
+    "expected": [
+      " -F"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "ssh to web-01 as deploy using the identity file backup.sql",
+    "prompt": "ssh",
+    "expected": [
+      " -i"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with wc, count all lines in a file: tmp.md",
+    "prompt": "wc",
+    "expected": [
+      " --lines"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I list files opened by the given command or process?: backup",
+    "prompt": "lsof",
+    "expected": [
+      " -c"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "signal the operating system to immediately terminate a program (which gets no chance to capture the signal): notes",
+    "prompt": "kill",
+    "expected": [
+      " -KILL"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "how do I list the contents of a compressed file?: archive.md",
+    "prompt": "gzip",
+    "expected": [
+      " --list"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "count the lines in users.csv",
+    "prompt": "wc",
+    "expected": [
+      " -l"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "show the first 2 lines of notes.md",
+    "prompt": "head",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with unzip, list the contents of a specific archive without extracting them: tmp.log",
+    "prompt": "unzip",
+    "expected": [
+      " -l"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "connect to 10.0.0.5 as www-data with the key index.html",
+    "prompt": "ssh",
+    "expected": [
+      " -i"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "show 2 lines after each match of password in script.sh",
+    "prompt": "grep",
+    "expected": [
+      " -A"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "update src with app.js only when changed",
+    "prompt": "cp",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "with kill, terminate a program using the SIGINT (interrupt) signal. This is typically initiated by the user pressing `<Ctrl c>`: image",
+    "prompt": "kill",
+    "expected": [
+      " -INT"
+    ]
+  },
+  {
+    "category": "Shell option (seen intent)",
+    "instruction": "compress config.yml but keep the original",
+    "prompt": "gzip",
+    "expected": [
+      " -k"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with ss, show all TCP sockets listening on the local 8080 port",
+    "prompt": "ss",
+    "expected": [
+      " -lt"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I archive files/directories to a multi-part split Zip archive (e.g. 3 GB parts)?: 3g 192.168.1.20 build /tmp/work",
+    "prompt": "zip",
+    "expected": [
+      " --recurse-paths"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "run wc -l on every .py file found",
+    "prompt": "find .",
+    "expected": [
+      " -name"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "show all TCP sockets listening on the local 8080 port",
+    "prompt": "ss",
+    "expected": [
+      " -lt"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "read the journal entries for java",
+    "prompt": "journalctl",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "print report.txt starting from line 10",
+    "prompt": "tail",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "read the journal entries for node",
+    "prompt": "journalctl",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I compare files but output nothing, yield only the exit status?: session.csv build.log",
+    "prompt": "cmp",
+    "expected": [
+      " --quiet"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "copy a file between two remote hosts transferring through the local host: localhost tmp.tar.gz localhost src",
+    "prompt": "scp",
+    "expected": [
+      " -3"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "rename backup.sql to todo.txt, asking before overwriting",
+    "prompt": "mv",
+    "expected": [
+      " -i"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with du, list the sizes of a directory and any subdirectories, in the given unit (B/KiB/MiB): /var/log",
+    "prompt": "du",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "send a `SIGUSR1` signal to all processes with the given GID (group id): admin",
+    "prompt": "kill",
+    "expected": [
+      " -SIGUSR1"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "set the file access or modification times to the current one and don't create file if it doesn't exist: session.csv data.txt",
+    "prompt": "touch",
+    "expected": [
+      " --no-create"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "read the journal entries for python",
+    "prompt": "journalctl",
+    "expected": [
+      " -u"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with sudo, list the allowed (and forbidden) commands for the invoking user in longer format",
+    "prompt": "sudo",
+    "expected": [
+      " --list"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "create a gzipped tar archive site.tar.gz of /etc",
+    "prompt": "tar",
+    "expected": [
+      " -czf"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I set the file access or modification times to the current one and don't create file if it doesn't exist?: notes.conf backup.sh",
+    "prompt": "touch",
+    "expected": [
+      " --no-create"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I print the current operating system name?",
+    "prompt": "uname",
+    "expected": [
+      " --operating-system"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I clear the commands history list?",
+    "prompt": "history",
+    "expected": [
+      " -c"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "add files/directories to a specific archive: localhost src ~/projects",
+    "prompt": "zip",
+    "expected": [
+      " --recurse-paths"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with touch, set the file access or modification times to the current one and don't create file if it doesn't exist: backup.zip backup.py",
+    "prompt": "touch",
+    "expected": [
+      " --no-create"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "add files/directories to a specific archive: 192.168.1.20 /var/log /var/log",
+    "prompt": "zip",
+    "expected": [
+      " --recurse-paths"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "list the allowed (and forbidden) commands for the invoking user in longer format",
+    "prompt": "sudo",
+    "expected": [
+      " --list"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "create a patch file for Git from the differences of two text files, treating nonexistent files as empty: cache.yml notes.pdf notes.py",
+    "prompt": "diff",
+    "expected": [
+      " --text"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with ssh, sSH Jumping: Connect through a jumphost to a remote server (Multiple jump hops may be specified separated by comma characters): bob server1 carol server1",
+    "prompt": "ssh bob@server1",
+    "expected": [
+      " -J"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "add files/directories to a specific archive: web-01 build docs",
+    "prompt": "zip",
+    "expected": [
+      " --recurse-paths"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "make a .tar.gz of /home/alice called project.zip",
+    "prompt": "tar",
+    "expected": [
+      " -czf"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "sSH Jumping: Connect through a jumphost to a remote server (Multiple jump hops may be specified separated by comma characters): deploy localhost bob 192.168.1.20",
+    "prompt": "ssh deploy@localhost",
+    "expected": [
+      " -J"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "print a file from a specific line number: 3 report.csv",
+    "prompt": "tail",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "copy a file between two remote hosts transferring through the local host: server1 session.conf 192.168.1.20 build",
+    "prompt": "scp",
+    "expected": [
+      " -3"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "find only folders in this tree",
+    "prompt": "find .",
+    "expected": [
+      " -type"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with cmp, compare files but output nothing, yield only the exit status: backup.tar.gz tmp.png",
+    "prompt": "cmp",
+    "expected": [
+      " --quiet"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how many lines of script.sh contain user?",
+    "prompt": "grep",
+    "expected": [
+      " -c"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I send a `SIGUSR1` signal to all processes with the given GID (group id)?: deploy",
+    "prompt": "kill",
+    "expected": [
+      " -SIGUSR1"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "launch the default shell with superuser privileges and run login-specific files (`.profile`, `.bash_profile`, etc.)",
+    "prompt": "sudo",
+    "expected": [
+      " -i"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "print the first 5 characters of app.js",
+    "prompt": "head",
+    "expected": [
+      " -c"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "add files/directories to a specific archive: 10.0.0.5 data docs",
+    "prompt": "zip",
+    "expected": [
+      " --recurse-paths"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "list all directories below here",
+    "prompt": "find .",
+    "expected": [
+      " -type"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "list all regular files below here",
+    "prompt": "find .",
+    "expected": [
+      " -type"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "print the fifth to tenth character of each line of the specified file: cache.pdf",
+    "prompt": "cut",
+    "expected": [
+      " --characters"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "recursively grep user in /tmp/work limited to .txt files",
+    "prompt": "grep",
+    "expected": [
+      " --include"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "recursively grep timeout in ~/downloads limited to .py files",
+    "prompt": "grep",
+    "expected": [
+      " --include"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I interactively ask for confirmation before termination?: tmp",
+    "prompt": "killall",
+    "expected": [
+      " --interactive"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "print the kernel name and version",
+    "prompt": "uname",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "count the words in error.log",
+    "prompt": "wc",
+    "expected": [
+      " -w"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "print the current operating system name",
+    "prompt": "uname",
+    "expected": [
+      " --operating-system"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I copy a file between two remote hosts transferring through the local host?: example.com backup.png localhost data",
+    "prompt": "scp",
+    "expected": [
+      " -3"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "run wc -l on every .js file found",
+    "prompt": "find .",
+    "expected": [
+      " -name"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "sort app.js by column 5",
+    "prompt": "sort",
+    "expected": [
+      " -k"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "move index.html to main.py with confirmation",
+    "prompt": "mv",
+    "expected": [
+      " -i"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "display the current primary group identity",
+    "prompt": "id",
+    "expected": [
+      " --group"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "show the first 20 bytes of main.py",
+    "prompt": "head",
+    "expected": [
+      " -c"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with history, clear the commands history list",
+    "prompt": "history",
+    "expected": [
+      " -c"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "match localhost as a complete word in script.sh",
+    "prompt": "grep",
+    "expected": [
+      " -w"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "ping prod.example.org 3 times",
+    "prompt": "ping",
+    "expected": [
+      " -c"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "print the fifth to tenth character of each line of the specified file: data.pdf",
+    "prompt": "cut",
+    "expected": [
+      " --characters"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with sort, sort `/etc/passwd` numerically by the 3rd field, and when items in the 3rd field are equal, sort by the 4th field by numbers with exponents",
+    "prompt": "sort",
+    "expected": [
+      " --field-separator"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with ping, also display a message if no response was received: web-01",
+    "prompt": "ping",
+    "expected": [
+      " -O"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "show the last 2 lines of users.csv",
+    "prompt": "tail",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "archive copy of /tmp/work to /etc",
+    "prompt": "cp",
+    "expected": [
+      " -a"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I show all TCP sockets listening on the local 8080 port?",
+    "prompt": "ss",
+    "expected": [
+      " -lt"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "copy users.csv to todo.txt but ask before overwriting",
+    "prompt": "cp",
+    "expected": [
+      " -i"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "list the sizes of a directory and any subdirectories, in the given unit (B/KiB/MiB): docs",
+    "prompt": "du",
+    "expected": [
+      " -m"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "set the file access or modification times to the current one and don't create file if it doesn't exist: config.yml data.py",
+    "prompt": "touch",
+    "expected": [
+      " --no-create"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "rename app.js to config.yml, asking before overwriting",
+    "prompt": "mv",
+    "expected": [
+      " -i"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with zip, add files/directories to a specific archive: server1 src docs",
+    "prompt": "zip",
+    "expected": [
+      " --recurse-paths"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I compare files, showing the differences side by side?: session.log tmp.log",
+    "prompt": "diff",
+    "expected": [
+      " --side-by-side"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I create a patch file for Git from the differences of two text files, treating nonexistent files as empty?: image.tar.gz build.csv logs.tar.gz",
+    "prompt": "diff",
+    "expected": [
+      " --text"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "print the fifth to tenth character of each line of the specified file: cache.sh",
+    "prompt": "cut",
+    "expected": [
+      " --characters"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with touch, set the file access or modification times to the current one and don't create file if it doesn't exist: build.md notes.json",
+    "prompt": "touch",
+    "expected": [
+      " --no-create"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "order the lines of backup.sql by field 2",
+    "prompt": "sort",
+    "expected": [
+      " -k"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how many words are in index.html?",
+    "prompt": "wc",
+    "expected": [
+      " -w"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "how do I display the current primary group identity?",
+    "prompt": "id",
+    "expected": [
+      " --group"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "clear the commands history list",
+    "prompt": "history",
+    "expected": [
+      " -c"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "order the lines of main.py by field 50",
+    "prompt": "sort",
+    "expected": [
+      " -k"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "show index.html from line 3 to the end",
+    "prompt": "tail",
+    "expected": [
+      " -n"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "send a `SIGUSR1` signal to all processes with the given GID (group id): dev",
+    "prompt": "kill",
+    "expected": [
+      " -SIGUSR1"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "create a tar archive logs.tar.bz2 from photos",
+    "prompt": "tar",
+    "expected": [
+      " -cf"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "match localhost as a complete word in output.json",
+    "prompt": "grep",
+    "expected": [
+      " -w"
+    ]
+  },
+  {
+    "category": "Shell option (unseen intent)",
+    "instruction": "with zip, add files/directories to a specific archive: web-01 docs src",
+    "prompt": "zip",
+    "expected": [
+      " --recurse-paths"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To list the files in a folder, run",
+    "expected": [
+      " ls"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To show the contents of a file, you can use the command",
+    "expected": [
+      " cat",
+      " less"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To search for text inside files, use",
+    "expected": [
+      " grep"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To change to another directory, type",
+    "expected": [
+      " cd"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To make a new folder, run",
+    "expected": [
+      " mkdir"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To remove a file, run",
+    "expected": [
+      " rm"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To copy a file, run",
+    "expected": [
+      " cp"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To see how much disk space is free, run",
+    "expected": [
+      " df"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To check which processes are running, run",
+    "expected": [
+      " ps",
+      " top"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To download a file from the web, you can use",
+    "expected": [
+      " curl",
+      " wget"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To make a script run, you must make it",
+    "expected": [
+      " executable"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To connect to a remote server, use",
+    "expected": [
+      " ssh"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To change who can read a file, use",
+    "expected": [
+      " chmod"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "The first line of a shell script is called the",
+    "expected": [
+      " shebang"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "Use the pipe symbol to send the output of one command to",
+    "expected": [
+      " another",
+      " the"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To print text to the screen, use",
+    "expected": [
+      " echo"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "To stop a running program, press",
+    "expected": [
+      " Ctrl"
+    ]
+  },
+  {
+    "category": "Technical English (shell)",
+    "prompt": "Run this command as the administrator with",
+    "expected": [
+      " sudo"
+    ]
+  }
+]

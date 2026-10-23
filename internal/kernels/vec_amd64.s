@@ -1,0 +1,679 @@
+#include "textflag.h"
+
+// func dotProductASM_F32(x, y []float32) float32
+TEXT ·dotProductASM_F32(SB), NOSPLIT, $0-52
+	MOVQ x_base+0(FP), SI
+	MOVQ x_len+8(FP), CX
+	MOVQ y_base+24(FP), DI
+	MOVQ y_len+32(FP), DX
+
+	CMPQ DX, CX
+	JGE have_len_dp_f32
+	MOVQ DX, CX
+have_len_dp_f32:
+	VZEROUPPER
+	VXORPS Y0, Y0, Y0
+	VXORPS Y1, Y1, Y1
+
+loop16_dp_f32:
+	CMPQ CX, $16
+	JL loop8_dp_f32
+	VMOVUPS 0(SI), Y2
+	VMOVUPS 32(SI), Y3
+	VFMADD231PS 0(DI), Y2, Y0
+	VFMADD231PS 32(DI), Y3, Y1
+	ADDQ $64, SI
+	ADDQ $64, DI
+	SUBQ $16, CX
+	JMP loop16_dp_f32
+
+loop8_dp_f32:
+	CMPQ CX, $8
+	JL reduce_dp_f32
+	VMOVUPS 0(SI), Y2
+	VFMADD231PS 0(DI), Y2, Y0
+	ADDQ $32, SI
+	ADDQ $32, DI
+	SUBQ $8, CX
+
+reduce_dp_f32:
+	VADDPS Y1, Y0, Y0
+	VEXTRACTF128 $1, Y0, X1
+	VADDPS X1, X0, X0
+	VSHUFPS $0x4E, X0, X0, X1
+	VADDPS X1, X0, X0
+	VSHUFPS $0x01, X0, X0, X1
+	VADDSS X1, X0, X0
+
+	TESTQ CX, CX
+	JZ done_dp_f32
+
+scalar_loop_dp_f32:
+	VMOVSS 0(SI), X2
+	VMULSS 0(DI), X2, X2
+	VADDSS X2, X0, X0
+	ADDQ $4, SI
+	ADDQ $4, DI
+	DECQ CX
+	JNZ scalar_loop_dp_f32
+
+done_dp_f32:
+	VZEROUPPER
+	VMOVSS X0, ret+48(FP)
+	RET
+
+// func vecAddScaledASM_F32(y, x []float32, alpha float32)
+TEXT ·vecAddScaledASM_F32(SB), NOSPLIT, $0-52
+	MOVQ y_base+0(FP), DI
+	MOVQ y_len+8(FP), CX
+	MOVQ x_base+24(FP), SI
+	MOVQ x_len+32(FP), DX
+	MOVSS alpha+48(FP), X0
+
+	CMPQ DX, CX
+	JGE have_len_axpy_f32
+	MOVQ DX, CX
+have_len_axpy_f32:
+	CMPQ CX, $0
+	JLE done_axpy_f32
+
+	VZEROUPPER
+	VBROADCASTSS X0, Y0
+
+loop16_axpy_f32:
+	CMPQ CX, $16
+	JL loop8_axpy_f32
+	VMOVUPS 0(DI), Y1
+	VMOVUPS 32(DI), Y2
+	VFMADD231PS 0(SI), Y0, Y1
+	VFMADD231PS 32(SI), Y0, Y2
+	VMOVUPS Y1, 0(DI)
+	VMOVUPS Y2, 32(DI)
+	ADDQ $64, SI
+	ADDQ $64, DI
+	SUBQ $16, CX
+	JMP loop16_axpy_f32
+
+loop8_axpy_f32:
+	CMPQ CX, $8
+	JL scalar_axpy_f32
+	VMOVUPS 0(DI), Y1
+	VFMADD231PS 0(SI), Y0, Y1
+	VMOVUPS Y1, 0(DI)
+	ADDQ $32, SI
+	ADDQ $32, DI
+	SUBQ $8, CX
+
+scalar_axpy_f32:
+	TESTQ CX, CX
+	JZ done_axpy_f32
+
+scalar_loop_axpy_f32:
+	VMOVSS 0(SI), X1
+	VMULSS X0, X1, X1
+	VADDSS 0(DI), X1, X1
+	VMOVSS X1, 0(DI)
+	ADDQ $4, SI
+	ADDQ $4, DI
+	DECQ CX
+	JNZ scalar_loop_axpy_f32
+
+done_axpy_f32:
+	VZEROUPPER
+	RET
+
+// func vecAddScaled4ASM_F32(y, x0, x1, x2, x3 []float32, a0, a1, a2, a3 float32)
+// func dotProduct4ASM_F32(x, y0, y1, y2, y3, res []float32)
+TEXT ·dotProduct4ASM_F32(SB), NOSPLIT, $0-144
+	MOVQ x_base+0(FP), SI
+	MOVQ x_len+8(FP), CX
+	MOVQ y0_base+24(FP), DI
+	MOVQ y1_base+48(FP), R8
+	MOVQ y2_base+72(FP), R9
+	MOVQ y3_base+96(FP), R10
+	MOVQ res_base+120(FP), R11
+
+	CMPQ y0_len+32(FP), CX
+	CMOVQLT y0_len+32(FP), CX
+	CMPQ y1_len+56(FP), CX
+	CMOVQLT y1_len+56(FP), CX
+	CMPQ y2_len+80(FP), CX
+	CMOVQLT y2_len+80(FP), CX
+	CMPQ y3_len+104(FP), CX
+	CMOVQLT y3_len+104(FP), CX
+	CMPQ CX, $0
+	JLE zero_ret_dp4_f32
+
+	VZEROUPPER
+	VXORPS Y0, Y0, Y0
+	VXORPS Y1, Y1, Y1
+	VXORPS Y2, Y2, Y2
+	VXORPS Y3, Y3, Y3
+	VXORPS Y8, Y8, Y8
+	VXORPS Y9, Y9, Y9
+	VXORPS Y10, Y10, Y10
+	VXORPS Y11, Y11, Y11
+
+loop16_dp4_f32:
+	CMPQ CX, $16
+	JL loop8_dp4_f32
+	VMOVUPS 0(SI), Y4
+	VMOVUPS 32(SI), Y5
+	VFMADD231PS 0(DI), Y4, Y0
+	VFMADD231PS 32(DI), Y5, Y8
+	VFMADD231PS 0(R8), Y4, Y1
+	VFMADD231PS 32(R8), Y5, Y9
+	VFMADD231PS 0(R9), Y4, Y2
+	VFMADD231PS 32(R9), Y5, Y10
+	VFMADD231PS 0(R10), Y4, Y3
+	VFMADD231PS 32(R10), Y5, Y11
+	ADDQ $64, SI
+	ADDQ $64, DI
+	ADDQ $64, R8
+	ADDQ $64, R9
+	ADDQ $64, R10
+	SUBQ $16, CX
+	JMP loop16_dp4_f32
+
+loop8_dp4_f32:
+	CMPQ CX, $8
+	JL reduce_dp4_f32
+	VMOVUPS 0(SI), Y4
+	VFMADD231PS 0(DI), Y4, Y0
+	VFMADD231PS 0(R8), Y4, Y1
+	VFMADD231PS 0(R9), Y4, Y2
+	VFMADD231PS 0(R10), Y4, Y3
+	ADDQ $32, SI
+	ADDQ $32, DI
+	ADDQ $32, R8
+	ADDQ $32, R9
+	ADDQ $32, R10
+	SUBQ $8, CX
+
+reduce_dp4_f32:
+	VADDPS Y8, Y0, Y0
+	VADDPS Y9, Y1, Y1
+	VADDPS Y10, Y2, Y2
+	VADDPS Y11, Y3, Y3
+
+	VEXTRACTF128 $1, Y0, X4
+	VADDPS X4, X0, X0
+	VSHUFPS $0x4E, X0, X0, X4
+	VADDPS X4, X0, X0
+	VSHUFPS $0x01, X0, X0, X4
+	VADDSS X4, X0, X0
+
+	VEXTRACTF128 $1, Y1, X4
+	VADDPS X4, X1, X1
+	VSHUFPS $0x4E, X1, X1, X4
+	VADDPS X4, X1, X1
+	VSHUFPS $0x01, X1, X1, X4
+	VADDSS X4, X1, X1
+
+	VEXTRACTF128 $1, Y2, X4
+	VADDPS X4, X2, X2
+	VSHUFPS $0x4E, X2, X2, X4
+	VADDPS X4, X2, X2
+	VSHUFPS $0x01, X2, X2, X4
+	VADDSS X4, X2, X2
+
+	VEXTRACTF128 $1, Y3, X4
+	VADDPS X4, X3, X3
+	VSHUFPS $0x4E, X3, X3, X4
+	VADDPS X4, X3, X3
+	VSHUFPS $0x01, X3, X3, X4
+	VADDSS X4, X3, X3
+
+	TESTQ CX, CX
+	JZ store_res_dp4_f32
+
+scalar_loop_dp4_f32:
+	VMOVSS 0(SI), X4
+	VMOVSS 0(DI), X5
+	VMULSS X4, X5, X5
+	VADDSS X5, X0, X0
+	VMOVSS 0(R8), X5
+	VMULSS X4, X5, X5
+	VADDSS X5, X1, X1
+	VMOVSS 0(R9), X5
+	VMULSS X4, X5, X5
+	VADDSS X5, X2, X2
+	VMOVSS 0(R10), X5
+	VMULSS X4, X5, X5
+	VADDSS X5, X3, X3
+	ADDQ $4, SI
+	ADDQ $4, DI
+	ADDQ $4, R8
+	ADDQ $4, R9
+	ADDQ $4, R10
+	DECQ CX
+	JNZ scalar_loop_dp4_f32
+
+store_res_dp4_f32:
+	VZEROUPPER
+	VMOVSS X0, 0(R11)
+	VMOVSS X1, 4(R11)
+	VMOVSS X2, 8(R11)
+	VMOVSS X3, 12(R11)
+	RET
+
+zero_ret_dp4_f32:
+	VZEROUPPER
+	VXORPS X0, X0, X0
+	VMOVSS X0, 0(R11)
+	VMOVSS X0, 4(R11)
+	VMOVSS X0, 8(R11)
+	VMOVSS X0, 12(R11)
+	RET
+
+// Constants for fast single-precision exp:
+// invLn2 = 1.4426950408889634 -> 0x3fb8aa3b
+// ln2Hi  = 0.693145751953125   -> 0x3f317200
+// ln2Lo  = 1.4286068203094172e-06 -> 0x35bfbe8e
+// c2 = 0.5           -> 0x3f000000
+// c3 = 0.16666667    -> 0x3e2aaaab
+// c4 = 0.041666668   -> 0x3d2aaaab
+// c5 = 0.008333334   -> 0x3c088889
+// one = 1.0          -> 0x3f800000
+// maxVal = 88.0      -> 0x42b00000
+// minVal = -88.0     -> 0xc2b00000
+
+// func vecExpASM_F32(dst, src []float32)
+TEXT ·vecExpASM_F32(SB), NOSPLIT, $0-48
+	MOVQ dst_base+0(FP), DI
+	MOVQ dst_len+8(FP), CX
+	MOVQ src_base+24(FP), SI
+	MOVQ src_len+32(FP), DX
+
+	CMPQ DX, CX
+	JGE have_len_exp_f32
+	MOVQ DX, CX
+have_len_exp_f32:
+	CMPQ CX, $0
+	JLE done_exp_f32
+
+	VZEROUPPER
+	// Load scalar constants into registers
+	MOVL $0x3fb8aa3b, AX // invLn2
+	VMOVD AX, X14
+	VBROADCASTSS X14, Y14
+
+	MOVL $0x3f317200, AX // ln2Hi (musl exact float32)
+	VMOVD AX, X15
+	VBROADCASTSS X15, Y15
+
+	MOVL $0x35bfbe8e, AX // ln2Lo (musl)
+	VMOVD AX, X13
+	VBROADCASTSS X13, Y13
+
+	MOVL $0x3f800000, AX // 1.0
+	VMOVD AX, X12
+	VBROADCASTSS X12, Y12
+
+loop8_exp_f32:
+	CMPQ CX, $8
+	JL scalar_loop_exp_f32
+
+	VMOVUPS 0(SI), Y0 // x
+
+	// Clamp to [-88, 88] to prevent overflow/underflow
+	MOVL $0x42b00000, AX
+	VMOVD AX, X1
+	VBROADCASTSS X1, Y1
+	VMINPS Y1, Y0, Y0
+	MOVL $0xc2b00000, AX
+	VMOVD AX, X1
+	VBROADCASTSS X1, Y1
+	VMAXPS Y1, Y0, Y0
+
+	// k = round(x * invLn2)
+	VMULPS Y14, Y0, Y1
+	VROUNDPS $0x00, Y1, Y1 // round to nearest even (k)
+
+	// r = x - k*ln2Hi - k*ln2Lo
+	VMOVAPS Y0, Y2
+	VFNMADD231PS Y15, Y1, Y2 // Y2 = Y0 - Y1*ln2Hi
+	VFNMADD231PS Y13, Y1, Y2 // Y2 = r = (x - k*ln2Hi) - k*ln2Lo
+
+	// 5th-degree Minimax polynomial: 1 + r*(1 + r*(c2 + r*(c3 + r*(c4 + r*c5))))
+	MOVL $0x3c088889, AX // c5
+	VMOVD AX, X3
+	VBROADCASTSS X3, Y3
+
+	MOVL $0x3d2aaaab, AX // c4
+	VMOVD AX, X4
+	VBROADCASTSS X4, Y4
+	VFMADD213PS Y4, Y2, Y3 // Y3 = r*c5 + c4
+
+	MOVL $0x3e2aaaab, AX // c3
+	VMOVD AX, X4
+	VBROADCASTSS X4, Y4
+	VFMADD213PS Y4, Y2, Y3 // Y3 = r*(r*c5 + c4) + c3
+
+	MOVL $0x3f000000, AX // c2
+	VMOVD AX, X4
+	VBROADCASTSS X4, Y4
+	VFMADD213PS Y4, Y2, Y3 // Y3 = r*(...) + c2
+
+	VFMADD213PS Y12, Y2, Y3 // Y3 = r*(...) + 1.0 (since 1.0 is in Y12)
+	VFMADD213PS Y12, Y2, Y3 // Y3 = poly = r*(...) + 1.0
+
+	// 2^k scaling: integer exponent adjustment
+	VCVTPS2DQ Y1, Y4
+	VPADDD exp_bias<>(SB), Y4, Y4
+	VPSLLD $23, Y4, Y4 // Y4 = 2^k
+
+	VMULPS Y4, Y3, Y0 // result = poly * 2^k
+
+	VMOVUPS Y0, 0(DI)
+	ADDQ $32, SI
+	ADDQ $32, DI
+	SUBQ $8, CX
+	JMP loop8_exp_f32
+
+scalar_loop_exp_f32:
+	TESTQ CX, CX
+	JZ done_exp_f32
+
+	VMOVSS 0(SI), X0
+	// Inline scalar fast exp
+	MOVL $0x42b00000, AX
+	VMOVD AX, X1
+	VMINSS X1, X0, X0
+	MOVL $0xc2b00000, AX
+	VMOVD AX, X1
+	VMAXSS X1, X0, X0
+
+	MOVL $0x3fb8aa3b, AX
+	VMOVD AX, X14
+	VMULSS X14, X0, X1
+	VROUNDSS $0x00, X1, X1, X1 // k
+
+	MOVL $0x3f317200, AX
+	VMOVD AX, X15
+	MOVL $0x35bfbe8e, AX
+	VMOVD AX, X13
+	VMOVAPS X0, X2
+	VFNMADD231SS X15, X1, X2
+	VFNMADD231SS X13, X1, X2 // r
+
+	MOVL $0x3c088889, AX
+	VMOVD AX, X3
+	MOVL $0x3d2aaaab, AX
+	VMOVD AX, X4
+	VFMADD213SS X4, X2, X3
+	MOVL $0x3e2aaaab, AX
+	VMOVD AX, X4
+	VFMADD213SS X4, X2, X3
+	MOVL $0x3f000000, AX
+	VMOVD AX, X4
+	VFMADD213SS X4, X2, X3
+	MOVL $0x3f800000, AX
+	VMOVD AX, X12
+	VFMADD213SS X12, X2, X3
+	VFMADD213SS X12, X2, X3 // poly
+
+	VCVTTSS2SI X1, AX
+	ADDL $127, AX
+	SHLL $23, AX
+	VMOVD AX, X4
+	VMULSS X4, X3, X0
+
+	VMOVSS X0, 0(DI)
+	ADDQ $4, SI
+	ADDQ $4, DI
+	DECQ CX
+	JNZ scalar_loop_exp_f32
+
+done_exp_f32:
+	VZEROUPPER
+	RET
+
+// func vecSigmoidASM_F32(dst, src []float32)
+TEXT ·vecSigmoidASM_F32(SB), NOSPLIT, $0-48
+	MOVQ dst_base+0(FP), DI
+	MOVQ dst_len+8(FP), CX
+	MOVQ src_base+24(FP), SI
+	MOVQ src_len+32(FP), DX
+
+	CMPQ DX, CX
+	JGE have_len_sig_f32
+	MOVQ DX, CX
+have_len_sig_f32:
+	CMPQ CX, $0
+	JLE done_sig_f32
+
+	VZEROUPPER
+	MOVL $0x3fb8aa3b, AX // invLn2
+	VMOVD AX, X14
+	VBROADCASTSS X14, Y14
+
+	MOVL $0x3f317200, AX // ln2Hi (musl exact float32)
+	VMOVD AX, X15
+	VBROADCASTSS X15, Y15
+
+	MOVL $0x35bfbe8e, AX // ln2Lo (musl)
+	VMOVD AX, X13
+	VBROADCASTSS X13, Y13
+
+	MOVL $0x3f800000, AX // 1.0
+	VMOVD AX, X12
+	VBROADCASTSS X12, Y12
+
+	VXORPS Y11, Y11, Y11 // 0.0
+
+loop8_sig_f32:
+	CMPQ CX, $8
+	JL scalar_loop_sig_f32
+
+	VMOVUPS 0(SI), Y0 // x
+
+	// Negate: Y0 = -x
+	VSUBPS Y0, Y11, Y0
+
+	// Clamp to [-88, 88]
+	MOVL $0x42b00000, AX
+	VMOVD AX, X1
+	VBROADCASTSS X1, Y1
+	VMINPS Y1, Y0, Y0
+	MOVL $0xc2b00000, AX
+	VMOVD AX, X1
+	VBROADCASTSS X1, Y1
+	VMAXPS Y1, Y0, Y0
+
+	// k = round(-x * invLn2)
+	VMULPS Y14, Y0, Y1
+	VROUNDPS $0x00, Y1, Y1
+
+	// r = (-x) - k*ln2Hi - k*ln2Lo
+	VMOVAPS Y0, Y2
+	VFNMADD231PS Y15, Y1, Y2
+	VFNMADD231PS Y13, Y1, Y2
+
+	// Minimax poly
+	MOVL $0x3c088889, AX
+	VMOVD AX, X3
+	VBROADCASTSS X3, Y3
+	MOVL $0x3d2aaaab, AX
+	VMOVD AX, X4
+	VBROADCASTSS X4, Y4
+	VFMADD213PS Y4, Y2, Y3
+	MOVL $0x3e2aaaab, AX
+	VMOVD AX, X4
+	VBROADCASTSS X4, Y4
+	VFMADD213PS Y4, Y2, Y3
+	MOVL $0x3f000000, AX
+	VMOVD AX, X4
+	VBROADCASTSS X4, Y4
+	VFMADD213PS Y4, Y2, Y3
+	VFMADD213PS Y12, Y2, Y3
+	VFMADD213PS Y12, Y2, Y3 // poly
+
+	// 2^k
+	VCVTPS2DQ Y1, Y4
+	VPADDD exp_bias<>(SB), Y4, Y4
+	VPSLLD $23, Y4, Y4
+	VMULPS Y4, Y3, Y0 // expVal = e^(-x)
+
+	// sigmoid = 1.0 / (1.0 + expVal)
+	VADDPS Y12, Y0, Y0
+	VDIVPS Y0, Y12, Y0
+
+	VMOVUPS Y0, 0(DI)
+	ADDQ $32, SI
+	ADDQ $32, DI
+	SUBQ $8, CX
+	JMP loop8_sig_f32
+
+scalar_loop_sig_f32:
+	TESTQ CX, CX
+	JZ done_sig_f32
+
+	VMOVSS 0(SI), X0
+	VXORPS X1, X1, X1
+	VSUBSS X0, X1, X1 // -x
+
+	MOVL $0x42b00000, AX
+	VMOVD AX, X2
+	VMINSS X2, X1, X1
+	MOVL $0xc2b00000, AX
+	VMOVD AX, X2
+	VMAXSS X2, X1, X1
+
+	MOVL $0x3fb8aa3b, AX
+	VMOVD AX, X14
+	VMULSS X14, X1, X2
+	VROUNDSS $0x00, X2, X2, X2 // k
+
+	MOVL $0x3f317200, AX
+	VMOVD AX, X15
+	MOVL $0x35bfbe8e, AX
+	VMOVD AX, X13
+	VMOVAPS X1, X0
+	VFNMADD231SS X15, X2, X0
+	VFNMADD231SS X13, X2, X0 // r
+
+	MOVL $0x3c088889, AX
+	VMOVD AX, X3
+	MOVL $0x3d2aaaab, AX
+	VMOVD AX, X4
+	VFMADD213SS X4, X0, X3
+	MOVL $0x3e2aaaab, AX
+	VMOVD AX, X4
+	VFMADD213SS X4, X0, X3
+	MOVL $0x3f000000, AX
+	VMOVD AX, X4
+	VFMADD213SS X4, X0, X3
+	MOVL $0x3f800000, AX
+	VMOVD AX, X12
+	VFMADD213SS X12, X0, X3
+	VFMADD213SS X12, X0, X3 // poly
+
+	VCVTTSS2SI X2, AX
+	ADDL $127, AX
+	SHLL $23, AX
+	VMOVD AX, X4
+	VMULSS X4, X3, X0 // expVal
+
+	VADDSS X12, X0, X0
+	VDIVSS X0, X12, X0
+	VMOVSS X0, 0(DI)
+
+	ADDQ $4, SI
+	ADDQ $4, DI
+	DECQ CX
+	JNZ scalar_loop_sig_f32
+
+done_sig_f32:
+	VZEROUPPER
+	RET
+
+GLOBL exp_bias<>(SB), RODATA|NOPTR, $32
+DATA exp_bias<>+0(SB)/4, $127
+DATA exp_bias<>+4(SB)/4, $127
+DATA exp_bias<>+8(SB)/4, $127
+DATA exp_bias<>+12(SB)/4, $127
+DATA exp_bias<>+16(SB)/4, $127
+DATA exp_bias<>+20(SB)/4, $127
+DATA exp_bias<>+24(SB)/4, $127
+DATA exp_bias<>+28(SB)/4, $127
+
+
+
+// func dotInt8ASM_F32(x []float32, w []int8) float32
+// Sign-extends 8 int8 weights to int32, converts them to float32 and accumulates x·w with FMA.
+TEXT ·dotInt8ASM_F32(SB), NOSPLIT, $0-52
+	MOVQ x_base+0(FP), SI
+	MOVQ x_len+8(FP), CX
+	MOVQ w_base+24(FP), DI
+	MOVQ w_len+32(FP), DX
+
+	CMPQ DX, CX
+	JGE have_len_i8
+	MOVQ DX, CX
+have_len_i8:
+	VZEROUPPER
+	VXORPS Y0, Y0, Y0
+	VXORPS Y1, Y1, Y1
+	VXORPS Y4, Y4, Y4
+	VXORPS Y5, Y5, Y5
+
+loop32_i8:
+	CMPQ CX, $32
+	JL loop8_i8
+	VPMOVSXBD 0(DI), Y2
+	VPMOVSXBD 8(DI), Y3
+	VPMOVSXBD 16(DI), Y6
+	VPMOVSXBD 24(DI), Y7
+	VCVTDQ2PS Y2, Y2
+	VCVTDQ2PS Y3, Y3
+	VCVTDQ2PS Y6, Y6
+	VCVTDQ2PS Y7, Y7
+	VFMADD231PS 0(SI), Y2, Y0
+	VFMADD231PS 32(SI), Y3, Y1
+	VFMADD231PS 64(SI), Y6, Y4
+	VFMADD231PS 96(SI), Y7, Y5
+	ADDQ $128, SI
+	ADDQ $32, DI
+	SUBQ $32, CX
+	JMP loop32_i8
+
+loop8_i8:
+	CMPQ CX, $8
+	JL reduce_i8
+	VPMOVSXBD 0(DI), Y2
+	VCVTDQ2PS Y2, Y2
+	VFMADD231PS 0(SI), Y2, Y0
+	ADDQ $32, SI
+	ADDQ $8, DI
+	SUBQ $8, CX
+	JMP loop8_i8
+
+reduce_i8:
+	VADDPS Y1, Y0, Y0
+	VADDPS Y5, Y4, Y4
+	VADDPS Y4, Y0, Y0
+	VEXTRACTF128 $1, Y0, X1
+	VADDPS X1, X0, X0
+	VSHUFPS $0x4E, X0, X0, X1
+	VADDPS X1, X0, X0
+	VSHUFPS $0x01, X0, X0, X1
+	VADDSS X1, X0, X0
+
+	TESTQ CX, CX
+	JZ done_i8
+
+scalar_loop_i8:
+	MOVBLSX 0(DI), AX
+	VCVTSI2SSL AX, X2, X2
+	VMULSS 0(SI), X2, X2
+	VADDSS X2, X0, X0
+	ADDQ $4, SI
+	INCQ DI
+	DECQ CX
+	JNZ scalar_loop_i8
+
+done_i8:
+	VZEROUPPER
+	VMOVSS X0, ret+48(FP)
+	RET

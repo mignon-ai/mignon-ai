@@ -1,0 +1,394 @@
+[
+ {
+  "instruction": "I was wondering if you could possibly dig up everything that never got paid for",
+  "output": "orders find --status unpaid"
+ },
+ {
+  "instruction": "who still owes us money on orders from last month",
+  "output": "orders find --status unpaid --when last-month"
+ },
+ {
+  "instruction": "got any invoices that are way past their due date",
+  "output": "orders find --status overdue"
+ },
+ {
+  "instruction": "the stuff customers sent back this year",
+  "output": "orders find --status refunded --when this-year"
+ },
+ {
+  "instruction": "anything that fell through and got called off in march",
+  "output": "orders find --status cancelled --month march"
+ },
+ {
+  "instruction": "parcels that have left the warehouse this week",
+  "output": "orders find --status shipped --when this-week"
+ },
+ {
+  "instruction": "orders we haven't touched yet",
+  "output": "orders find --status pending"
+ },
+ {
+  "instruction": "orders still waiting to go out the door",
+  "output": "orders find --status pending"
+ },
+ {
+  "instruction": "what money came in from books last year",
+  "output": "orders total --category books --when last-year"
+ },
+ {
+  "instruction": "give me a rough idea how many toy orders we got in the past 3 weeks",
+  "output": "orders count --category toys --last-days 21"
+ },
+ {
+  "instruction": "big spenders: orders of 10000 or above",
+  "output": "orders find --min-amount 10000"
+ },
+ {
+  "instruction": "nothing fancy, just the small orders below 15 bucks",
+  "output": "orders find --max-amount 15"
+ },
+ {
+  "instruction": "orders that cost somewhere around 200 to 300 dollars",
+  "output": "orders find --min-amount 200 --max-amount 300"
+ },
+ {
+  "instruction": "what's the single most valuable thing anyone ever bought from us",
+  "output": "orders find --sort highest --limit 1"
+ },
+ {
+  "instruction": "our five priciest sales ever",
+  "output": "orders find --sort highest --limit 5"
+ },
+ {
+  "instruction": "the three cheapest beauty things sold",
+  "output": "orders find --category beauty --sort lowest --limit 3"
+ },
+ {
+  "instruction": "I forgot, which order was the very first one we got",
+  "output": "orders find --sort oldest --limit 1"
+ },
+ {
+  "instruction": "whatever came in most recently",
+  "output": "orders find --sort newest --limit 1"
+ },
+ {
+  "instruction": "pull the latest ten, I want to eyeball them",
+  "output": "orders find --sort newest --limit 10"
+ },
+ {
+  "instruction": "how much did Tyrell spend with us in total",
+  "output": "orders total --customer Tyrell"
+ },
+ {
+  "instruction": "did Bluth ever return anything",
+  "output": "orders find --status refunded --customer Bluth"
+ },
+ {
+  "instruction": "have any of Nakatomi's orders been cancelled",
+  "output": "orders find --status cancelled --customer Nakatomi"
+ },
+ {
+  "instruction": "number of times Dunder bought something in 2023",
+  "output": "orders count --year 2023 --customer Dunder"
+ },
+ {
+  "instruction": "show everything related to Penelope Okafor please",
+  "output": "orders find --customer \"Penelope Okafor\""
+ },
+ {
+  "instruction": "what's the story with Oscorp's unpaid stuff",
+  "output": "orders find --status unpaid --customer Oscorp"
+ },
+ {
+  "instruction": "find me the order with the number 1187",
+  "output": "orders find --id 1187"
+ },
+ {
+  "instruction": "can I see what's in order 20456",
+  "output": "orders find --id 20456"
+ },
+ {
+  "instruction": "pull the details for invoice number 733",
+  "output": "orders find --id 733"
+ },
+ {
+  "instruction": "looking for ticket #9921",
+  "output": "orders find --id 9921"
+ },
+ {
+  "instruction": "anything that came in on the 14th of February",
+  "output": "orders find --month february --day 14"
+ },
+ {
+  "instruction": "what did we sell on new year's day 2025",
+  "output": "orders find --month january --day 1 --year 2025"
+ },
+ {
+  "instruction": "orders from before the summer of 2022 started, say before June 2022",
+  "output": "orders find --before june-2022"
+ },
+ {
+  "instruction": "everything since the start of 2024",
+  "output": "orders find --after 2024"
+ },
+ {
+  "instruction": "the last couple of days",
+  "output": "orders find --last-days 2"
+ },
+ {
+  "instruction": "the past fortnight's orders",
+  "output": "orders find --last-days 14"
+ },
+ {
+  "instruction": "how many things were returned in all of 2022",
+  "output": "orders count --status refunded --year 2022"
+ },
+ {
+  "instruction": "tally of everything shipped last year",
+  "output": "orders count --status shipped --when last-year"
+ },
+ {
+  "instruction": "how much cash did paid sporting goods bring in during June",
+  "output": "orders total --status paid --category sports --month june"
+ },
+ {
+  "instruction": "sum up what the home department sold today",
+  "output": "orders total --category home --when today"
+ },
+ {
+  "instruction": "is there anything in clothing over 400 that nobody paid for",
+  "output": "orders find --status unpaid --category clothing --min-amount 400"
+ },
+ {
+  "instruction": "shipped electronics worth 1500 or more from last month",
+  "output": "orders find --status shipped --category electronics --min-amount 1500 --when last-month"
+ },
+ {
+  "instruction": "grocery orders under 30 dollars from yesterday",
+  "output": "orders find --category groceries --max-amount 30 --when yesterday"
+ },
+ {
+  "instruction": "cancelled books orders newest first",
+  "output": "orders find --status cancelled --category books --sort newest"
+ },
+ {
+  "instruction": "overdue invoices from Acme, biggest first",
+  "output": "orders find --status overdue --customer Acme --sort highest"
+ },
+ {
+  "instruction": "top 3 pending orders by value",
+  "output": "orders find --status pending --sort highest --limit 3"
+ },
+ {
+  "instruction": "tell me how many paid orders there were yesterday",
+  "output": "orders count --status paid --when yesterday"
+ },
+ {
+  "instruction": "total of overdue orders from Globex",
+  "output": "orders total --status overdue --customer Globex"
+ },
+ {
+  "instruction": "count my refunded toys orders",
+  "output": "orders count --status refunded --category toys"
+ },
+ {
+  "instruction": "yo whats unpaid",
+  "output": "orders find --status unpaid"
+ },
+ {
+  "instruction": "gimme all the shipped ones",
+  "output": "orders find --status shipped"
+ },
+ {
+  "instruction": "pending, please",
+  "output": "orders find --status pending"
+ },
+ {
+  "instruction": "how many orders do we have",
+  "output": "orders count"
+ },
+ {
+  "instruction": "what's the grand total of all our sales",
+  "output": "orders total"
+ },
+ {
+  "instruction": "any orders over $3k",
+  "output": "orders find --min-amount 3000"
+ },
+ {
+  "instruction": "orders under 1.5k",
+  "output": "orders find --max-amount 1500"
+ },
+ {
+  "instruction": "orders from last year over 5k",
+  "output": "orders find --min-amount 5000 --when last-year"
+ },
+ {
+  "instruction": "show me yesterday's cancellations",
+  "output": "orders find --status cancelled --when yesterday"
+ },
+ {
+  "instruction": "this month's returns",
+  "output": "orders find --status refunded --when this-month"
+ },
+ {
+  "instruction": "last week's shipments",
+  "output": "orders find --status shipped --when last-week"
+ },
+ {
+  "instruction": "Hooli's biggest ever",
+  "output": "orders find --customer Hooli --sort highest --limit 1"
+ },
+ {
+  "instruction": "Stark's latest 2 orders",
+  "output": "orders find --customer Stark --sort newest --limit 2"
+ },
+ {
+  "instruction": "do we have any beauty orders at all",
+  "output": "orders find --category beauty"
+ },
+ {
+  "instruction": "list of groceries orders, cheapest at the top",
+  "output": "orders find --category groceries --sort lowest"
+ },
+ {
+  "instruction": "home orders that came in after the 20th of April",
+  "output": "orders find --category home --after april-20"
+ },
+ {
+  "instruction": "clothing orders before the end of may",
+  "output": "orders find --category clothing --before may"
+ },
+ {
+  "instruction": "tell me about orders from Seo-yeon Park",
+  "output": "orders find --customer \"Seo-yeon Park\""
+ },
+ {
+  "instruction": "I need a head count of paid orders from August 2024",
+  "output": "orders count --status paid --month august --year 2024"
+ },
+ {
+  "instruction": "take a look at unpaid orders over 750 placed this year",
+  "output": "orders find --status unpaid --min-amount 750 --when this-year"
+ },
+ {
+  "instruction": "remind me, which refunds happened in the last 10 days",
+  "output": "orders find --status refunded --last-days 10"
+ },
+ {
+  "instruction": "the cheapest overdue order",
+  "output": "orders find --status overdue --sort lowest --limit 1"
+ },
+ {
+  "instruction": "oldest shipped order",
+  "output": "orders find --status shipped --sort oldest --limit 1"
+ },
+ {
+  "instruction": "my newest cancelled order",
+  "output": "orders find --status cancelled --sort newest --limit 1"
+ },
+ {
+  "instruction": "how many of those pending orders are electronics",
+  "output": "orders count --status pending --category electronics"
+ },
+ {
+  "instruction": "what do we owe in refunds for december",
+  "output": "orders total --status refunded --month december"
+ },
+ {
+  "instruction": "revenue breakdown of shipped orders in 2023",
+  "output": "orders total --status shipped --year 2023"
+ },
+ {
+  "instruction": "is there anything from Wonka over 100",
+  "output": "orders find --min-amount 100 --customer Wonka"
+ },
+ {
+  "instruction": "could you ship order 312 for me",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "please tell the customer that order 88 is delayed",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "I'd like to cancel order 6001 right away",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "give Acme a 10 percent discount",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "change Hooli's phone number",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "write a note on order 17 saying call back",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "send me the report by email",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "charge the card for invoice 990 again",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "make me a cup of tea",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "what's a good name for a goldfish",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "explain how a bicycle works",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "play the next song",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "can you recommend a restaurant in Athens",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "what happened in 1969",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "I love this app",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "count the days until the weekend",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "show me the way to the station",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "total eclipse of the heart lyrics",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "hey can you do something for me",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "order me a pizza",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "I need to order more printer paper",
+  "output": "orders unknown"
+ },
+ {
+  "instruction": "which orders of magnitude separate a mouse and an elephant",
+  "output": "orders unknown"
+ }
+]

@@ -1,0 +1,15 @@
+/mignon
+tools/.venv/
+__pycache__/
+dataset/
+data/
+!internal/data/
+!pkg/data/
+models/
+# Browser demo build outputs
+examples/order-search/mignon-web.wasm
+examples/order-search/mignon.js
+examples/order-search/wasm_exec.js
+# Package build outputs
+packages/mignon-web/dist/
+packages/mignon-web/*.tgz

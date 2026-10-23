@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask your orders — mignon-ai</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --panel: #ffffff; --ink: #1b1f27; --muted: #667085; --line: #e3e6eb;
+    --accent: #2f6fed; --accent-ink: #ffffff; --chip: #eaf0fe; --chip-ink: #1d4ec2;
+    --ok: #12805c; --warn: #b54708; --warn-bg: #fff4e5; --bad: #b42318; --bad-bg: #fdecea;
+    --code-bg: #f1f3f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151a; --panel: #1a1e25; --ink: #e8eaee; --muted: #98a2b3; --line: #2a303a;
+      --accent: #6b9bff; --accent-ink: #0c1220; --chip: #1f2b45; --chip-ink: #a9c3ff;
+      --ok: #4cc9a0; --warn: #f5b062; --warn-bg: #2d2316; --bad: #ff8a80; --bad-bg: #32191a;
+      --code-bg: #12151a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 900px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+  form { display: flex; gap: 8px; }
+  input[type=text] { flex: 1; min-width: 0; font: inherit; padding: 12px 14px; border-radius: 8px;
+         border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+  input[type=text]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  button { font: inherit; border: 0; border-radius: 8px; padding: 12px 18px; background: var(--accent);
+           color: var(--accent-ink); font-weight: 600; cursor: pointer; }
+  button:disabled { opacity: .5; cursor: default; }
+  .examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .examples button { background: var(--chip); color: var(--chip-ink); font-weight: 500; padding: 6px 12px; font-size: 14px; }
+  .status { color: var(--muted); font-size: 14px; margin-top: 10px; min-height: 1.5em; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { background: var(--chip); color: var(--chip-ink); border-radius: 999px; padding: 4px 12px; font-size: 14px; }
+  .chip b { font-weight: 600; }
+  .notice { border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; font-size: 15px; }
+  .notice.warn { background: var(--warn-bg); color: var(--warn); }
+  .notice.fixed { background: var(--chip); color: var(--chip-ink); }
+  .notice.bad { background: var(--bad-bg); color: var(--bad); }
+  .answer { font-size: 32px; font-weight: 650; letter-spacing: -0.02em; margin: 4px 0 2px; }
+  .answer small { font-size: 15px; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .table-wrap { overflow-x: auto; }
+  .reply { font: 14px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--code-bg);
+           border-radius: 8px; padding: 10px 12px; overflow-x: auto; white-space: pre-wrap; word-break: break-word; }
+  .tok { border-radius: 3px; padding: 1px 0; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 20px; color: var(--muted); font-size: 14px; margin-top: 10px; }
+  .meta b { color: var(--ink); font-weight: 600; }
+  .badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; font-weight: 600; }
+  .badge.high { background: var(--chip); color: var(--ok); }
+  .badge.low { background: var(--warn-bg); color: var(--warn); }
+  footer { color: var(--muted); font-size: 13px; margin-top: 24px; }
+  footer code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+  .hidden { display: none; }
+  @media (max-width: 520px) { form { flex-direction: column; } .answer { font-size: 26px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ask your orders</h1>
+  <p class="sub">A 538k-parameter model turns plain English into a search filter. It runs entirely in this page — nothing is sent anywhere.</p>
+
+  <div class="panel">
+    <form id="form" autocomplete="off">
+      <input type="text" id="q" placeholder="e.g. unpaid electronics orders over $500 from last month" aria-label="Your question" disabled>
+      <button id="go" type="submit" disabled>Search</button>
+    </form>
+    <div class="examples" id="examples"></div>
+    <div class="status" id="status">Loading model…</div>
+  </div>
+
+  <div id="result" class="hidden">
+    <div class="panel" id="outcome"></div>
+    <div class="panel">
+      <h2>What the model understood</h2>
+      <div id="notice"></div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="panel">
+      <h2>The model's raw reply <span style="text-transform:none;letter-spacing:0;font-weight:400">— shading shows how sure it was of each piece</span></h2>
+      <div class="reply" id="reply"></div>
+      <div class="meta" id="meta"></div>
+    </div>
+  </div>
+
+  <footer>
+    The model only writes a command such as <code>orders find --status unpaid --when last-month</code>.
+    Code checks it against the allowed values, works out the dates, and filters the sample orders below —
+    made-up data generated in your browser. Today is <span id="today"></span>.
+  </footer>
+</main>
+
+<script src="mignon.js"></script>
+<script src="orders.js"></script>
+<script>
+"use strict";
+const EXAMPLES = [
+  "unpaid electronics orders over $500 from last month",
+  "how many orders did Acme Corp place this year?",
+  "total revenue from refunded toys in 2025",
+  "the 5 biggest orders from the past 30 days",
+  "cancelled books orders yesterday",
+  "orders before Oct 15",
+  "order 10042",
+  "what's the weather in Paris",
+];
+const CONFIDENT = 0.8;   // every piece of the reply at least this likely: shown as sure
+const UNSURE = 0.6;      // below this anywhere: warn
+
+const $ = id => document.getElementById(id);
+const today = new Date();
+const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+$("today").textContent = today.toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+
+// ---- sample orders (deterministic, relative to today) ----
+function rng(seed) { return () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; }; }
+const CUSTOMERS = ["Acme Corp", "Globex", "Initech", "Hooli", "Stark Industries", "Wonka", "Umbrella", "Priya Silva",
+  "Nadia Haddad", "Omar Weber", "Lena Costa", "Soylent", "Cyberdyne", "Tyrell Corp", "Hiro Tanaka", "Grace Kim"];
+const CATEGORIES = ["electronics", "books", "clothing", "home", "toys", "sports", "beauty", "groceries"];
+const STATUSES = ["paid", "unpaid", "overdue", "refunded", "cancelled", "shipped", "pending"];
+const ORDERS = (() => {
+  const r = rng(7), pick = a => a[Math.floor(r() * a.length)], rows = [];
+  for (let i = 0; i < 5000; i++) {
+    const d = new Date(today.getFullYear(), today.getMonth(), today.getDate() - Math.floor(Math.pow(r(), 1.3) * 800));
+    rows.push({ id: 10000 + i, customer: pick(CUSTOMERS), category: pick(CATEGORIES), status: pick(STATUSES),
+                amount: Math.round(20 + Math.pow(r(), 2.2) * 4000), date: iso(d) });
+  }
+  return rows;
+})();
+
+function search(q, range) {
+  let rows = ORDERS.filter(o =>
+    (!q.id || o.id === q.id) &&
+    (!q.status || o.status === q.status) &&
+    (!q.category || o.category === q.category) &&
+    (!q.minAmount || o.amount >= q.minAmount) &&
+    (!q.maxAmount || o.amount <= q.maxAmount) &&
+    (!range || ((!range.from || o.date >= range.from) && (!range.to || o.date <= range.to))) &&
+    (!q.customer || o.customer.toLowerCase().includes(q.customer.toLowerCase())));
+  const sort = q.sort || "newest";
+  rows.sort((a, b) => ({ newest: b.date.localeCompare(a.date), oldest: a.date.localeCompare(b.date),
+                         highest: b.amount - a.amount, lowest: a.amount - b.amount })[sort] || 0);
+  return rows;
+}
+
+// ---- model ----
+let model = null;
+async function start() {
+  try {
+    const res = await fetch("orders.mgn");
+    if (!res.ok) throw new Error("could not download the model (" + res.status + ")");
+    const bytes = new Uint8Array(await res.arrayBuffer());
+    model = await Mignon.load({ model: bytes, wasm: "mignon-web.wasm" });
+    $("status").textContent = "Model ready (" + (bytes.length / 1048576).toFixed(1) + " MB, INT8). Try an example or type your own.";
+    $("q").disabled = $("go").disabled = false;
+    $("q").focus();
+    const preset = new URLSearchParams(location.search).get("q");  // ?q=... asks on load
+    if (preset) ask(preset);
+  } catch (e) {
+    $("status").textContent = "Could not load the model: " + e.message + ". Serve this folder over HTTP (python3 -m http.server).";
+  }
+}
+
+const money = n => "$" + n.toLocaleString("en-US");
+const dateText = s => new Date(s.slice(0, 10) + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function filterChips(q, range) {
+  const out = [];
+  const add = (k, v) => out.push(`<span class="chip">${k}: <b>${esc(v)}</b></span>`);
+  add("show", { find: "list of orders", count: "how many", total: "total value" }[q.command]);
+  if (q.status) add("status", q.status);
+  if (q.category) add("category", q.category);
+  if (q.minAmount) add("amount at least", money(q.minAmount));
+  if (q.maxAmount) add("amount at most", money(q.maxAmount));
+  if (q.id) add("order", "#" + q.id);
+  if (range) {
+    if (!range.from) add("dates", "up to " + dateText(range.to));
+    else if (!range.to) add("dates", "from " + dateText(range.from));
+    else add("dates", range.from === range.to ? dateText(range.from) : dateText(range.from) + " – " + dateText(range.to));
+  }
+  if (q.customer) add("customer", q.customer);
+  if (q.sort) add("sorted", q.sort + " first");
+  if (q.limit) add("limit", q.limit);
+  return out.join("");
+}
+
+function shade(p) {   // background by confidence: clear when sure, amber as it drops
+  if (p >= CONFIDENT) return "";
+  const a = Math.min(0.55, (CONFIDENT - p) * 1.1 + 0.12);
+  return `background: rgba(245,158,11,${a.toFixed(2)})`;
+}
+
+function render(res) {
+  $("result").classList.remove("hidden");
+  const unsure = res.min < UNSURE;
+  const q = res.query;
+  let outcome = "", notice = "", chips = "";
+
+  if (!q) {
+    notice = `<div class="notice bad">The model's reply isn't a valid search (${esc(res.error || "empty")}), so nothing was run.</div>`;
+  } else if (q.command === "unknown") {
+    notice = `<div class="notice warn">This doesn't look like an order search, so nothing was run. Try something like "unpaid orders from last month".</div>`;
+    outcome = `<h2>Result</h2><div class="answer">Not an order search</div>`;
+  } else {
+    const rows = search(q, res.range);
+    const shown = q.command === "find" && q.limit ? rows.slice(0, q.limit) : rows;
+    if (q.command === "count") {
+      outcome = `<h2>Result</h2><div class="answer">${rows.length.toLocaleString()} <small>matching ${rows.length === 1 ? "order" : "orders"}</small></div>`;
+    } else if (q.command === "total") {
+      const sum = rows.reduce((s, o) => s + o.amount, 0);
+      outcome = `<h2>Result</h2><div class="answer">${money(sum)} <small>across ${rows.length.toLocaleString()} ${rows.length === 1 ? "order" : "orders"}</small></div>`;
+    } else {
+      const note = shown.length < rows.length ? ` of ${rows.length.toLocaleString()}` : "";
+      outcome = `<h2>Result</h2><div class="answer">${shown.length}${note} <small>${shown.length === 1 ? "order" : "orders"}</small></div>` +
+        (shown.length ? `<div class="table-wrap"><table><thead><tr><th>Order</th><th>Date</th><th>Customer</th><th>Category</th><th>Status</th><th class="num">Amount</th></tr></thead><tbody>` +
+          shown.slice(0, 15).map(o => `<tr><td>#${o.id}</td><td>${dateText(o.date)}</td><td>${esc(o.customer)}</td><td>${o.category}</td><td>${o.status}</td><td class="num">${money(o.amount)}</td></tr>`).join("") +
+          `</tbody></table></div>` + (shown.length > 15 ? `<div class="status">Showing the first 15.</div>` : "") : "");
+    }
+    chips = filterChips(q, res.range);
+    for (const f of res.fixes) notice += `<div class="notice fixed">${esc(f)}.</div>`;
+    for (const w of res.warnings) notice += `<div class="notice warn">Careful: ${esc(w)}.</div>`;
+    if (unsure) notice += `<div class="notice warn">The model was unsure about part of this reply (shaded below). Check the filters before trusting the result.</div>`;
+  }
+  $("outcome").innerHTML = outcome;
+  $("outcome").classList.toggle("hidden", !outcome);
+  $("notice").innerHTML = notice;
+  $("chips").innerHTML = chips;
+
+  $("reply").innerHTML = res.tokens.length
+    ? res.tokens.map(t => `<span class="tok" style="${shade(t.prob)}" title="${(t.prob * 100).toFixed(0)}%">${esc(t.text)}</span>`).join("")
+    : "(empty)";
+  const level = unsure ? `<span class="badge low">unsure</span>` : `<span class="badge high">sure</span>`;
+  $("meta").innerHTML = `<span>confidence ${level}</span>` +
+    `<span>weakest piece <b>${(res.min * 100).toFixed(0)}%</b></span>` +
+    `<span>decoded in <b>${res.decodeMs.toFixed(0)} ms</b></span>` +
+    `<span>${res.tokens.length} tokens</span>`;
+}
+
+function ask(text) {
+  if (!model || !text.trim()) return;
+  $("q").value = text;
+  render(Orders.answer((prompt, maxTokens) => model.generate(prompt, { maxTokens }), text, iso(today)));
+}
+
+$("form").addEventListener("submit", e => { e.preventDefault(); ask($("q").value); });
+$("examples").innerHTML = EXAMPLES.map((t, i) => `<button type="button" data-i="${i}">${esc(t)}</button>`).join("");
+$("examples").addEventListener("click", e => { const b = e.target.closest("button"); if (b) ask(EXAMPLES[b.dataset.i]); });
+start();
+</script>
+</body>
+</html>

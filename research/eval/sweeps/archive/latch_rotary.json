@@ -1,0 +1,11 @@
+{
+  "seeds": [1, 2, 3],
+  "text": "data/pretrain_git_v3",
+  "base": {"preset": "small", "opt": "muon", "epochs": 3, "max_seqs": 60000, "dilation_start": 1},
+  "variants": [
+    {"name": "plain"},
+    {"name": "rotary", "latch_rotary": true},
+    {"name": "plain_noattn", "attn_heads": 0},
+    {"name": "rotary_noattn", "attn_heads": 0, "latch_rotary": true}
+  ]
+}
